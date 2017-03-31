@@ -1,0 +1,77 @@
+.black{color:black}
+.navbar-custom {background-color:#FFBB00;color:#ffffff;height:64px;border-radius:0; !important;margin-bottom: 0;
+!important;box-shadow: 0 2px 5px #CACACA;}
+
+.navbar-customSearch {background-color:#3E50B4;color:#ffffff;height:64px;border-radius:0; !important;margin-bottom: 0;
+!important;box-shadow: 0 2px 5px #CACACA;}
+
+h1{  font-family: 'Roboto', sans-serif;  }
+
+.fontrobo{ font-family: 'Roboto', sans-serif;  }
+
+.zemofnt{  font-size: 25px;  padding-bottom: 5px; }
+
+.colBlack{  color: black;  }
+
+.cent {  padding-top: 20px;  }
+
+
+.glyphicon.glyphicon-search{  font-size: 15px;  }
+
+.inp{font-family:'Roboto',sans-serif;padding:10px;width:270px;border:solid 1px gainsboro;-webkit-transition:box-shadow 0.3s,
+border 0.3s;-moz-transition:box-shadow 0.3s,border 0.3s;-o-transition: box-shadow 0.3s,border 0.3s;transition:
+        box-shadow 0.3s,border 0.3s;}
+
+.inp:focus,.style-1 input.focus{font-family:'Roboto',sans-serif;border:1px solid grey;-webkit-box-shadow:
+        0 0 5px 1px #969696;-moz-box-shadow: 0 0 5px 1px #969696;box-shadow: 0 0 5px grey;}
+
+.error{  color: #408447;font-family: 'Roboto', sans-serif;  font-size: small; }
+
+.error1{  margin-top: 30px;  color: #408447;  font-family: 'Roboto', sans-serif;  font-size: 14px;  }
+
+label{  padding-top: 10px;  font-size: 12px;  letter-spacing: 2px;  font-family: 'Roboto', sans-serif;  }
+
+input#bigbutton {
+    width:270px;
+    background: #3ebf69; /*the colour of the button*/
+    padding: 8px 14px 10px; /*apply some padding inside the button*/
+    border: 1px solid #2f5bb7;; /*required or the default border for the browser will appear*/
+    cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+    /*style the text*/
+    text-align: center;
+    font-size:12px;
+    font-family:'Roboto', sans-serif; /*Oswald is available from http://www.google.com/webfonts/specimen/Oswald*/
+    letter-spacing:.1em;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3); /*give the text a shadow - doesn't appear in Opera 12.02 or earlier*/
+    color: white;
+    /*give the corners a small curve*/
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 3px;
+}
+input#bigbutton:disabled {  font-family: 'Roboto', sans-serif;  background: #dddddd;  }
+
+input#bigbutton:hover {font-family:'Roboto',sans-serif;border:1px solid #2f5bb7;color:#fff;text-shadow:0 1px rgba(0,0,0,0.3);
+    background:#3ebf94 -webkit-linear-gradient(top, #3ebf69, #3ebf94);
+}
+
+.formlr{height: 400px;width: 400px;background-color: #ecf0f1;margin: auto;text-align: center;
+    align-content: center;border-radius: 10px;  }
+
+.logpos{  padding-top: 30px;  }
+
+.center{  margin:0 auto;  text-align: center;  }
+
+.loginbox{  padding-top: 30px;  }
+
+.formcontent{  font-family: 'Roboto', sans-serif;  width:300px;  height:150px;  margin:auto;  }
+
+.fill{  width: 100%;  }
+
+html { background: transparent }
+
+.padright{  padding-right: 30px;  padding-top: 7px;  }
+
+.nav>.padright>a:focus, .nav>.padright>a:hover{  background-color: black;  opacity: .1;  }
+
+body {  padding-top: 65px;  }

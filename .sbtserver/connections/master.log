@@ -1,0 +1,43 @@
+New log file opened at Wed Mar 29 23:03:38 IST 2017 by 19062@akash-Vostro-3546
+Taking next connection to: 37552
+New client attempting to connect on port: 54344-37552
+  Address = /127.0.1.1:37552
+This client on port 54344 has uuid 4859c2c0-f34a-45a5-bd06-fec35779e1a9 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-4859c2c0-f34a-45a5-bd06-fec35779e1a9
+Taking next connection to: 37552
+New client attempting to connect on port: 54346-37552
+  Address = /127.0.1.1:37552
+Handshake exception on socket: 54346
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 37552
+New client attempting to connect on port: 54348-37552
+  Address = /127.0.1.1:37552
+This client on port 54348 has uuid 20d9c5e8-a21d-44c5-8085-48dd85e6b60f configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-4859c2c0-f34a-45a5-bd06-fec35779e1a9, activator-20d9c5e8-a21d-44c5-8085-48dd85e6b60f
+Taking next connection to: 37552
+New client attempting to connect on port: 54350-37552
+  Address = /127.0.1.1:37552
+Handshake exception on socket: 54350
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 37552
+New client attempting to connect on port: 54352-37552
+  Address = /127.0.1.1:37552
+This client on port 54352 has uuid ae28f34e-0b14-4f38-942c-9b6cd28cb564 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-4859c2c0-f34a-45a5-bd06-fec35779e1a9, activator-20d9c5e8-a21d-44c5-8085-48dd85e6b60f, activator-ae28f34e-0b14-4f38-942c-9b6cd28cb564
+Taking next connection to: 37552
