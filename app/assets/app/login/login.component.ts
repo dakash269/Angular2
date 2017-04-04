@@ -21,8 +21,7 @@ export class LoginComponent  {
     this.authenticationService.login(this.data.userEmail, this.data.userPassword)
       .subscribe(
         data => {
-          // location.pathname = '/note1';
-          this.router.navigate(['/note1']);
+          this.router.navigate(['/note']);
         },
         error => {
           console.log(error);

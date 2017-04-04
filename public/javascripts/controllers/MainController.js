@@ -64,8 +64,10 @@ note.controller("noteController", function ($scope, $http) {
     $scope.sendData = function () {
         if (!($scope.title == undefined && $scope.content == undefined)) {
             var data = {user: $scope.user, title: $scope.title, content: $scope.content,reminder: $scope.reminder,isArchive:0,isTrash:0};
+          console.log(data);
             $http.post('addPost', data)
                 .success(function (data) {
+                  console.log(data.content);
                     $scope.getPosts();
                 });
             delete $scope.title;
@@ -75,7 +77,7 @@ note.controller("noteController", function ($scope, $http) {
     };
     $scope.del = function (id) {
         data = {id:id};
-        if (window.confirm("Are you sure?")) {
+      if (window.confirm("Are you sure?")) {
             $http.post('del', data)
                 .success(function (data) {
                     $scope.getPosts();

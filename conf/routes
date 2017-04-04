@@ -7,6 +7,7 @@ GET     /                           controllers.Application.index
 POST    /api/authenticate             @controllers.HomeController.reg
 POST    /api/go             @controllers.HomeController.log
 POST    /api/postdata             @controllers.HomeController.send
+GET     /api/get                 @controllers.HomeController.get
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 #GET     /assets/*file               controllers.Assets.at(path="/public", file)
@@ -23,7 +24,9 @@ POST    /del                             @controllers.HomeController.del
 POST    /archive                             @controllers.HomeController.archive
 
 GET     /getArchive                 @controllers.HomeController.getArchive
+GET     /api/getArchive                 @controllers.HomeController.getArchive1
 GET     /getTrash                @controllers.HomeController.getTrash
+GET     /api/getTrash                @controllers.HomeController.getTrash1
 GET     /getReminder                    @controllers.HomeController.getReminder
 
 GET     /login                               @controllers.HomeController.login

@@ -18,15 +18,19 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class HomeController extends Controller {
+  public Result get() {
+    List<Notetaken1> card= Notetaken1.getData1();
+    return ok(Json.toJson(card));
+  }
   @Security.Authenticated(Secured.class)
   public Result send() {
     JsonNode jsonNode=request().body().asJson();
+    int isArchive=jsonNode.path("isArchive").asInt();
+    int isTrash=jsonNode.path("isTrash").asInt();
     String user=jsonNode.path("user").asText();
     String title=jsonNode.path("title").asText();
     String content=jsonNode.path("content").asText();
     String reminder=jsonNode.path("reminder").asText();
-    int isArchive=jsonNode.path("isArchive").asInt();
-    int isTrash=jsonNode.path("isTrash").asInt();
     String rem=reminder;
     if (!Objects.equals(reminder, ""))
     {
@@ -36,20 +40,15 @@ public class HomeController extends Controller {
       try {
         reminder = simpleDateFormat1.format(simpleDateFormat.parse(reminder));
         Date date = simpleDateFormat1.parse(reminder);
-        System.out.println("date : " + simpleDateFormat.format(date));
         Notetaken1 posts = new Notetaken1(user, title, content, rem, isArchive, isTrash);
         posts.save();
       }
       catch (ParseException ex)
-      {
-        System.out.println("Exception " + ex);
-      }
+      { System.out.println("Exception " + ex);}
     }
     else
-    {
-      Notetaken1 posts = new Notetaken1(user, title, content, "", isArchive, isTrash);
-      posts.save();
-    }
+    {Notetaken1 posts = new Notetaken1(user, title, content, "", isArchive, isTrash);
+      posts.save();}
     return ok("Post added successfully");
   }
   public Result reg() {
@@ -141,10 +140,18 @@ public class HomeController extends Controller {
         List<Notetaken1> card= Notetaken1.getArchive(session().get("email"));
         return ok(Json.toJson(card));
     }
+  public Result getArchive1(){
+    List<Notetaken1> card= Notetaken1.getArchive1(session().get("email"));
+    return ok(Json.toJson(card));
+  }
     public Result getTrash(){
         List<Notetaken1> card= Notetaken1.getTrash(session().get("email"));
         return ok(Json.toJson(card));
     }
+  public Result getTrash1(){
+    List<Notetaken1> card= Notetaken1.getTrash1(session().get("email"));
+    return ok(Json.toJson(card));
+  }
     public Result getReminder()
     {
         List<Notetaken1> card = Notetaken1.getReminder(session().get("email"));
@@ -208,36 +215,35 @@ public class HomeController extends Controller {
     }
 
     public Result addNotetaken(){
-//        JsonNode jsonNode=request().body().asJson();
-//        String user=jsonNode.path("user").asText();
-//        String title=jsonNode.path("title").asText();
-//        String content=jsonNode.path("content").asText();
-//        String reminder=jsonNode.path("reminder").asText();
-//        int isArchive=jsonNode.path("isArchive").asInt();
-//        int isTrash=jsonNode.path("isTrash").asInt();
-//        String rem=reminder;
-//        if (!Objects.equals(reminder, ""))
-//        {
-//            Date now = new Date();
-//            SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("MM/dd/yyyy HH:mm");
-//            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm");
-//            try {
-//                reminder = simpleDateFormat1.format(simpleDateFormat.parse(reminder));
-//                Date date = simpleDateFormat1.parse(reminder);
-//                System.out.println("date : " + simpleDateFormat.format(date));
-//                Notetaken1 posts = new Notetaken1(user, title, content, rem, isArchive, isTrash);
-//                posts.save();
-//                }
-//                catch (ParseException ex)
-//               {
-//                System.out.println("Exception " + ex);
-//               }
-//        }
-//        else
-//        {
-//            Notetaken1 posts = new Notetaken1(user, title, content, "", isArchive, isTrash);
-//            posts.save();
-//        }
+        JsonNode jsonNode=request().body().asJson();
+        String user=jsonNode.path("user").asText();
+        String title=jsonNode.path("title").asText();
+        String content=jsonNode.path("content").asText();
+        String reminder=jsonNode.path("reminder").asText();
+        int isArchive=jsonNode.path("isArchive").asInt();
+        int isTrash=jsonNode.path("isTrash").asInt();
+        String rem=reminder;
+        if (!Objects.equals(reminder, ""))
+        {
+            Date now = new Date();
+            SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+            try {
+              System.out.print("hi");
+                reminder = simpleDateFormat1.format(simpleDateFormat.parse(reminder));
+                Date date = simpleDateFormat1.parse(reminder);
+                Notetaken1 posts = new Notetaken1(user, title, content, rem, isArchive, isTrash);
+                posts.save();
+                }
+                catch (ParseException ex)
+               {System.out.println("Exception " + ex);}
+        }
+        else
+        {
+          System.out.print("hi");
+            Notetaken1 posts = new Notetaken1(user, title, content, "", isArchive, isTrash);
+            posts.save();
+        }
         return ok("Post added successfully");
     }
 
@@ -253,22 +259,17 @@ public class HomeController extends Controller {
 
     public Result login() {return ok(login.render("Login"));}
 
-//    @Security.Authenticated(Secured.class)
+    @Security.Authenticated(Secured.class)
     public Result note() { return ok(note.render("note",session().get("email")));}
 
-//    @Security.Authenticated(Secured.class)
-    public Result Reminder() {return ok(Reminder.render("Reminder"));}
+    @Security.Authenticated(Secured.class)
+    public Result Reminder() {return ok(Reminder.render("Reminder",session().get("email")));}
 
-//    @Security.Authenticated(Secured.class)
-    public Result Archive() {
-        return ok(Archive.render("Archive"));
-    }
+    @Security.Authenticated(Secured.class)
+    public Result Archive() { return ok(Archive.render("Archive",session().get("email")));}
 
-//    @Security.Authenticated(Secured.class)
-    public Result Trash() {
-        return ok(Trash.render("Trash"));
-    }
-
+    @Security.Authenticated(Secured.class)
+    public Result Trash() { return ok(Trash.render("Trash",session().get("email")));}
 
     public Result logout() {
         session().clear();

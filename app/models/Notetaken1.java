@@ -92,6 +92,16 @@ public class Notetaken1 extends Model{
         }
         return temp;
     }
+  public static List<Notetaken1> getData1() {
+    List<Notetaken1> list1 = Ebean.find(Notetaken1.class).findList();
+    List<Notetaken1> temp = new ArrayList<>();
+    for (Notetaken1 aList1 : list1) {
+      if ((!Objects.equals(aList1.getisArchive(), 1)&& !Objects.equals(aList1.getisTrash(), 1))) {
+        temp.add(aList1);
+      }
+    }
+    return temp;
+  }
 
     public static List<Notetaken1> getReminder(String email) {
         List<Notetaken1> list1 = Ebean.find(Notetaken1.class).findList();
@@ -114,6 +124,16 @@ public class Notetaken1 extends Model{
         }
         return temp;
     }
+  public static List<Notetaken1> getArchive1(String email) {
+    List<Notetaken1> list1 = Ebean.find(Notetaken1.class).findList();
+    List<Notetaken1> temp = new ArrayList<>();
+    for (Notetaken1 aList1 : list1) {
+      if (!Objects.equals(aList1.getisArchive(), 0)) {
+        temp.add(aList1);
+      }
+    }
+    return temp;
+  }
     public static List<Notetaken1> getTrash(String email) {
         List<Notetaken1> list1 = Ebean.find(Notetaken1.class).findList();
         List<Notetaken1> temp = new ArrayList<>();
@@ -124,6 +144,16 @@ public class Notetaken1 extends Model{
         }
         return temp;
     }
+  public static List<Notetaken1> getTrash1(String email) {
+    List<Notetaken1> list1 = Ebean.find(Notetaken1.class).findList();
+    List<Notetaken1> temp = new ArrayList<>();
+    for (Notetaken1 aList1 : list1) {
+      if (!Objects.equals(aList1.getisTrash(), 0)) {
+        temp.add(aList1);
+      }
+    }
+    return temp;
+  }
 
     public int getisArchive() { return isArchive;}
 

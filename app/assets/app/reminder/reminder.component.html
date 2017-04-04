@@ -1,0 +1,82 @@
+@(title: String,userEmail: String)
+<nav class="navbar-custom navbar navbar-fixed-top">
+  <div class="navbar-header">
+    <div class="cent col-sm-1 col-md-1"><a href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a></div>
+  </div>
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="active"><h1 class="zemofnt fontrobo colBlack ">Reminder</h1></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <!--<li class="active1 padright"><a class="black" href="@routes.HomeController.logout"></a></li>-->
+    </ul>
+    <div class="col-sm-8 col-md-8 padtopSearch">
+      <form class="navbar-form" role="search">
+        <div class="searchBox input-group">
+          <input onfocus="myFunction()" type="text" class="search1 form-control" placeholder="Search" name="q">
+        </div>
+      </form>
+    </div>
+    <div class="userName pull-right">@userEmail</div>
+  </div>
+</nav>
+
+<div id="wrapper" class="toggled">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="itemList">
+        <!--<a href="@routes.HomeController.note()">-->
+          <div class="col-sm-3 col-md-3"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Notes</div>
+        <!--</a>-->
+      </li>
+      <hr style="border: 0.5px solid #918f8f" width="118%">
+      <li class="itemList">
+        <!--<a href="@routes.HomeController.Archive()">-->
+          <div class="col-sm-3 col-md-3"><i class="fa fa-archive fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Archive</div>
+
+        <!--</a>-->
+      </li>
+      <hr style="border: 0.5px solid #918f8f" width="118%">
+      <li class="itemList">
+        <!--<a href="@routes.HomeController.Reminder()">-->
+          <div class="col-sm-3 col-md-3"><i class="fa fa-bell fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Reminder</div>
+
+        <!--</a>-->
+      </li>
+      <hr style="border: 0.5px solid #918f8f" width="118%">
+      <li class="itemList">
+        <!--<a href="@routes.HomeController.Trash()">-->
+          <div class="col-sm-3 col-md-3"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Trash</div>
+
+        <!--</a>-->
+      </li>
+      <hr style="border: 0.5px solid #918f8f" width="118%">
+
+    </ul>
+  </div>
+  <div class="vr" id="ver">&nbsp;</div>
+  <div id="Reminder"><h3>Reminder</h3></div>
+    <div class="padTopMore col-md-12" ng-cloak>
+      <div class="row rowWithFullWidth col-md-12">
+        <div id="items" class="no-padding col-md-10 col-md-offset-2">
+          <!--<div ng-repeat="post in postsReminder">-->
+            <div class="col-md-3 eachCard">
+              <!--<div class="card" ng-clock>-->
+                <input ng-model="id" name="id" ng-value="post.id" type="hidden">
+                <div class="clickd">
+                  <!--<div name="title" class="title wordWrap" contenteditable="false" ng-cloak>{{ post.title}}</div>-->
+                  <!--<div name="content" class="content wordWrap" contenteditable="false" ng-cloak>{{ post.content}}</div>-->
+                  <!--<div name="reminder" class="remind" contenteditable="false"><div class="remindText" ng-cloak>{{post.reminder}}</div></div>-->
+                </div>
+                <div class="toolbar">
+                  <div class="inner col-md-offset-2">
+                    <!--<div class="col-md-3"><a ng-click="del(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Delete Note" class="fa fa-trash fa-lg" aria-hidden="true"></i></a></div>-->
+                    <!--<div class="col-md-3"><a ng-click="archive(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Archive Note" class="fa fa-archive fa-lg" aria-hidden="true"></i></a></div>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

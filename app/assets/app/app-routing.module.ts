@@ -4,10 +4,16 @@ import {AppComponent}            from './app.component';
 import {LoginComponent}         from './login/index';
 import {RegisterComponent}         from './register/index';
 import {NoteComponent}            from  './note/index';
+import {ArchiveComponent} from './archive/index';
+import {TrashComponent} from './trash/index';
+import {ReminderComponent} from './reminder/index';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'register', component: RegisterComponent },
-  { path: 'note1', component: NoteComponent },
+  { path: 'note', component: NoteComponent },
+  { path: 'archive', component: ArchiveComponent },
+  { path: 'trash', component: TrashComponent },
+  { path: 'reminder', component: ReminderComponent },
   { path: 'login', component: LoginComponent },
   { path: '**', redirectTo: '' },
 ];

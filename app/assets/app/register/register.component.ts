@@ -22,7 +22,7 @@ export class RegisterComponent {
         data => {
           console.log('data');
           // location.pathname = '/note1';
-          this.router.navigate(['/note1']);
+          this.router.navigate(['/note']);
         },
         error => {
           console.log(error);

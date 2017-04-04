@@ -12,6 +12,10 @@ import { LoginComponent }         from './login/index';
 import { RegisterComponent }         from './register/index';
 import {NoteComponent} from './note/index';
 import {  AuthenticationService, AlertService  } from './_services/index';
+import {TrashComponent} from './trash/index';
+import {ReminderComponent} from './reminder/index';
+import {ArchiveComponent} from './archive/index';
+// import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
 
 @NgModule({
   imports: [
@@ -20,12 +24,16 @@ import {  AuthenticationService, AlertService  } from './_services/index';
     HttpModule,
     AppRoutingModule,
     RouterModule,
+    // NguiDatetimePickerModule,
   ],
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     NoteComponent,
+    ArchiveComponent,
+    TrashComponent,
+    ReminderComponent,
   ],
   providers: [
     AuthenticationService, AlertService, Location ],

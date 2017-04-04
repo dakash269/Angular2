@@ -1,4 +1,4 @@
-@(title: String)
+@(title: String,userEmail: String)
 
 <!DOCTYPE html>
 <html><head>
@@ -44,7 +44,7 @@
             </div>
           </form>
         </div>
-        <div class="userName pull-right">userEmail</div>
+        <div class="userName pull-right">@userEmail</div>
       </div>
     </nav>
 
@@ -113,24 +113,4 @@
     </div>
 
     <script src="@routes.Assets.versioned("/javascripts/controllers/MainController.js")"></script>
-
-
-    @*<div class="img"></div>*@
-    @*<div class="imgtxt">&emsp;&emsp;No notes in trash</div>*@
-    @*<div class="scrollbar"id="style1"><div class="force-overflow"></div></div>*@
-    <script>$(window).scroll(
-            {
-              previousTop: 0
-            },
-            function () {
-              var currentTop = $(window).scrollTop();
-              if (currentTop < this.previousTop) {
-                $(".sidebar em").text("Up");
-                $("#top").show();
-              } else {
-                $(".sidebar em").text("Down");
-                $("#top").hide();
-              }
-              this.previousTop = currentTop;
-            });</script>
   </body></html>
