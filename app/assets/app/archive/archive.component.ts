@@ -40,7 +40,6 @@ export class ArchiveComponent implements AfterViewInit {
         .subscribe(
           data => {
             this.getArchive();
-            this.router.navigate(['/trash']);
           });
     }
   };
@@ -50,7 +49,6 @@ export class ArchiveComponent implements AfterViewInit {
         .subscribe(
           data => {
             this.getArchive();
-            this.router.navigate(['/note']);
           });
     }
   };

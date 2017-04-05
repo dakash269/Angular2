@@ -34,8 +34,16 @@ export class AuthenticationService {
   public movetonote(id: string) {
     return this.http.post('/movetonote', { id: id });
   }
+
+  public  getusername() {
+      return this.http.get('/getusername').map((res: Response) => { return res.text(); });
+  }
+
   public  getUser() {
     return this.http.get('/api/get').map((res: Response) => { return res.json(); });
+  }
+  public  getReminder() {
+    return this.http.get('/api/getReminder').map((res: Response) => { return res.json(); });
   }
   public  getArchive() {
     return this.http.get('/api/getArchive').map((res: Response) => { return res.json(); });

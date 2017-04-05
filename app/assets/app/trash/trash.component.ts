@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Http, Headers, Response } from '@angular/http';
 import { AuthenticationService } from '../_services/index';
@@ -11,7 +11,7 @@ import { AuthenticationService } from '../_services/index';
     'assets/app/bootstrap/css/bootstrap.min.css', 'assets/app/font-awesome/css/font-awesome.min.css',
     'assets/app/bootstrap/css/bootstrap-theme.min.css'],
 })
-export class TrashComponent {
+export class TrashComponent implements AfterViewInit {
   public data: any = {};
   public posts: Object = [];
   constructor(
@@ -21,6 +21,14 @@ export class TrashComponent {
     this.getTrash();
     this.data = { id: this.data.id, title: this.data.title, user: this.data.user,
       content: this.data.content, reminder: this.data.reminder};
+  }
+  public ngAfterViewInit() {
+    let element = document.getElementById('wrapper');
+    let trigger = document.getElementById('menu-toggle');
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      element.classList.toggle('toggled');
+    });
   }
   public getTrash() {
     this.authenticationService.getTrash()
@@ -41,7 +49,6 @@ export class TrashComponent {
         .subscribe(
           data => {
             this.getTrash();
-            this.router.navigate(['/note']);
           });
     }
   };

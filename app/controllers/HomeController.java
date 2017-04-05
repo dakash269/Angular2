@@ -18,38 +18,12 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class HomeController extends Controller {
+  public Result getusername() {
+    return ok(session().get("email"));
+  }
   public Result get() {
     List<Notetaken1> card= Notetaken1.getData1();
     return ok(Json.toJson(card));
-  }
-  @Security.Authenticated(Secured.class)
-  public Result send() {
-    JsonNode jsonNode=request().body().asJson();
-    int isArchive=jsonNode.path("isArchive").asInt();
-    int isTrash=jsonNode.path("isTrash").asInt();
-    String user=jsonNode.path("user").asText();
-    String title=jsonNode.path("title").asText();
-    String content=jsonNode.path("content").asText();
-    String reminder=jsonNode.path("reminder").asText();
-    String rem=reminder;
-    if (!Objects.equals(reminder, ""))
-    {
-      Date now = new Date();
-      SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("MM/dd/yyyy HH:mm");
-      SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm");
-      try {
-        reminder = simpleDateFormat1.format(simpleDateFormat.parse(reminder));
-        Date date = simpleDateFormat1.parse(reminder);
-        Notetaken1 posts = new Notetaken1(user, title, content, rem, isArchive, isTrash);
-        posts.save();
-      }
-      catch (ParseException ex)
-      { System.out.println("Exception " + ex);}
-    }
-    else
-    {Notetaken1 posts = new Notetaken1(user, title, content, "", isArchive, isTrash);
-      posts.save();}
-    return ok("Post added successfully");
   }
   public Result reg() {
     JsonNode jsonNode = request().body().asJson();
@@ -157,6 +131,11 @@ public class HomeController extends Controller {
         List<Notetaken1> card = Notetaken1.getReminder(session().get("email"));
         return ok(Json.toJson(card));
     }
+  public Result getReminder1()
+  {
+    List<Notetaken1> card = Notetaken1.getReminder1();
+    return ok(Json.toJson(card));
+  }
 
     public Result archive() {
         JsonNode jsonNode = request().body().asJson();
@@ -213,7 +192,35 @@ public class HomeController extends Controller {
         c.update();
         return ok();
     }
-
+  @Security.Authenticated(Secured.class)
+  public Result send() {
+    JsonNode jsonNode=request().body().asJson();
+    int isArchive=jsonNode.path("isArchive").asInt();
+    int isTrash=jsonNode.path("isTrash").asInt();
+    String user=session().get("email");
+    String title=jsonNode.path("title").asText();
+    String content=jsonNode.path("content").asText();
+    String reminder=jsonNode.path("reminder").asText();
+    String rem=reminder;
+    if (!Objects.equals(reminder, ""))
+    {
+      Date now = new Date();
+      SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+      SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+      try {
+        reminder = simpleDateFormat1.format(simpleDateFormat.parse(reminder));
+        Date date = simpleDateFormat1.parse(reminder);
+        Notetaken1 posts = new Notetaken1(user, title, content, rem, isArchive, isTrash);
+        posts.save();
+      }
+      catch (ParseException ex)
+      { System.out.println("Exception " + ex);}
+    }
+    else
+    {Notetaken1 posts = new Notetaken1(user, title, content, "", isArchive, isTrash);
+      posts.save();}
+    return ok("Post added successfully");
+  }
     public Result addNotetaken(){
         JsonNode jsonNode=request().body().asJson();
         String user=jsonNode.path("user").asText();
@@ -240,7 +247,6 @@ public class HomeController extends Controller {
         }
         else
         {
-          System.out.print("hi");
             Notetaken1 posts = new Notetaken1(user, title, content, "", isArchive, isTrash);
             posts.save();
         }
@@ -248,8 +254,9 @@ public class HomeController extends Controller {
     }
 
     public Result getPosts() {
-        List<Notetaken1> card= Notetaken1.getData(session().get("email"));
-        return ok(Json.toJson(card));
+        List<Notetaken1> card;
+      card = Notetaken1.getData(session().get("email"));
+      return ok(Json.toJson(card));
     }
 
 

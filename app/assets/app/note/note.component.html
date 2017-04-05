@@ -38,9 +38,9 @@
       </li>
       <hr style="border: 0.5px solid #918f8f" width="118%">
       <li class="itemList">
-        <!--<a [routerLink]="['/reminder']">-->
+        <a [routerLink]="['/reminder']">
           <div class="col-sm-3 col-md-3"><i class="fa fa-bell fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Reminder</div>
-        <!--</a>-->
+        </a>
       </li>
       <hr style="border: 0.5px solid #918f8f" width="118%">
       <li class="itemList">
@@ -54,25 +54,25 @@
     <div class="note col-sm-6  col-md-6 col-md-offset-3">
       <input [(ngModel)]="data.user" name="user" type="hidden">
       <!--<input [(ngModel)]="user" ng-init="user=' @userEmail'" name="user" type="hidden">-->
-      <div id="titleDiv" class="title">
+      <div id="titleDiv" *ngIf="edited" class="title">
         <!--<div ng-show="showRest" id="titleDiv" ng-style="myStyle" class="title" ng-cloak>-->
-        <input [(ngModel)]="data.title" class="textDivInp" placeholder="Title" name="title" type="text">
+        <input [(ngModel)]="data.title"  class="textDivInp" placeholder="Title" name="title" type="text">
       </div>
       <div id="contentDiv" class="content1">
         <!--<textarea ng-focus="showRest = true" [(ngModel)]="content" placeholder="Take a note..." name="content"></textarea>-->
-        <textarea  [(ngModel)]="data.content" placeholder="Take a note..." name="content"></textarea>
+        <textarea  [(ngModel)]="data.content" (focus)="onFocus(edited)" placeholder="Take a note..." name="content"></textarea>
       </div>
 
-      <div  id="toolbarDiv" class="toolbar" >
+      <div  id="toolbarDiv" *ngIf="edited" class="toolbar" >
         <!--<div ng-show="showRest" id="toolbarDiv" class="toolbar" ng-cloak>-->
         <div class="col-sm-4 col-md-4">
-          <!--<input [(ngModel)]="data.reminder" class="timeInp datetimepicker4"  name="reminder" placeholder="Set Reminder"/>-->
+          <input [(ngModel)]="data.reminder"  class="timeInp datetimepicker4"  name="reminder" placeholder="Set Reminder"/>
           <!--<input type="datetime-local" [(ngModel)]="data.reminder" >-->
           <!--<input--><!--[(ngModel)]="data.reminder" ngui-datetime-picker  date-only="true" />-->
         </div>
 
         <div class="col-sm-10 col-md-10">
-          <div align="right" > <button class="done" (click)="sendData();showRest=false;">Done</button> </div>
+          <div align="right" > <button class="done" (click)="sendData()">Done</button> </div>
         </div>
       </div>
     </div>

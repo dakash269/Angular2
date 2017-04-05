@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Http, Headers, Response } from '@angular/http';
 import { AuthenticationService } from '../_services/index';
@@ -11,5 +11,27 @@ import { AuthenticationService } from '../_services/index';
     'assets/app/bootstrap/css/bootstrap.min.css', 'assets/app/font-awesome/css/font-awesome.min.css',
     'assets/app/bootstrap/css/bootstrap-theme.min.css'],
 })
-export class ReminderComponent {
+export class ReminderComponent implements AfterViewInit {
+  public data: any = {};
+  public postsReminder: Object = [];
+  constructor(
+    private router: Router,
+    private authenticationService: AuthenticationService,
+    private http: Http) {
+    this.getReminder();
+    this.data = { id: this.data.id, title: this.data.title, user: this.data.user,
+      content: this.data.content, reminder: this.data.reminder};
+  }
+  public ngAfterViewInit() {
+    let element = document.getElementById('wrapper');
+    let trigger = document.getElementById('menu-toggle');
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      element.classList.toggle('toggled');
+    });
+  }
+  public getReminder() {
+    this.authenticationService.getReminder()
+      .subscribe(arg => this.postsReminder = arg );
+  };
 }

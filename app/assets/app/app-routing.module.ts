@@ -7,10 +7,12 @@ import {NoteComponent}            from  './note/index';
 import {ArchiveComponent} from './archive/index';
 import {TrashComponent} from './trash/index';
 import {ReminderComponent} from './reminder/index';
+import { AuthGuard } from './guards/index';
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'note', component: NoteComponent },
+  // { path: 'note', component: NoteComponent, canActivate: [AuthGuard]  },
   { path: 'archive', component: ArchiveComponent },
   { path: 'trash', component: TrashComponent },
   { path: 'reminder', component: ReminderComponent },
@@ -23,9 +25,3 @@ const routes: Routes = [
   exports: [ RouterModule ],
 })
 export class AppRoutingModule {}
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

@@ -17,6 +17,7 @@
         <script type='text/javascript' src='@routes.Assets.versioned("lib/zone.js/dist/zone.js")'></script>
         <script type='text/javascript' src='@routes.Assets.versioned("lib/reflect-metadata/Reflect.js")'></script>
         <script type='text/javascript' src='@routes.Assets.versioned("lib/systemjs/dist/system.src.js")'></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment-with-locales.min.js"></script>
         <script>
             var map = {
                 'app': 'assets/app',
@@ -89,14 +90,7 @@
       angular.element($('.datetimepicker4')).triggerHandler('input');
     });
   </script>
-  <script>
-    $( document ).ready(function() {
-      $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-      })
-    });
-  </script>
+
     <body>
         <my-app>Loading...</my-app>
     </body>

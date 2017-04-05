@@ -114,6 +114,17 @@ public class Notetaken1 extends Model{
         }
         return temp;
     }
+  public static List<Notetaken1> getReminder1() {
+    List<Notetaken1> list1 = Ebean.find(Notetaken1.class).findList();
+    List<Notetaken1> temp = new ArrayList<>();
+    for (Notetaken1 aList1 : list1) {
+      if (!Objects.equals(aList1.getReminder(), ""))
+      {
+        temp.add(aList1);
+      }
+    }
+    return temp;
+  }
     public static List<Notetaken1> getArchive(String email) {
         List<Notetaken1> list1 = Ebean.find(Notetaken1.class).findList();
         List<Notetaken1> temp = new ArrayList<>();

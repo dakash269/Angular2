@@ -10,7 +10,6 @@ import {Location} from '@angular/common';
   selector: 'my-app',
   template: `
       <router-outlet></router-outlet>
-      <a [routerLink]="['/login']" class="navigation1">Login</a>   
   `,
 })
 export class AppComponent {

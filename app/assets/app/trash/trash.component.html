@@ -26,30 +26,27 @@
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <li class="itemList">
-        <!--<a href="@routes.HomeController.note()">-->
+        <a [routerLink]="['/note']">
           <div class="col-sm-3 col-md-3"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Notes</div>
-        <!--</a>-->
+        </a>
       </li>
       <hr style="border: 0.5px solid #918f8f" width="118%">
       <li class="itemList">
-        <!--<a href="@routes.HomeController.Archive()">-->
+        <a [routerLink]="['/archive']">
           <div class="col-sm-3 col-md-3"><i class="fa fa-archive fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Archive</div>
-
-        <!--</a>-->
+        </a>
       </li>
       <hr style="border: 0.5px solid #918f8f" width="118%">
       <li class="itemList">
-        <!--<a href="@routes.HomeController.Reminder()">-->
-          <div class="col-sm-3 col-md-3"><i class="fa fa-bell fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Reminder</div>
-
-        <!--</a>-->
+        <a [routerLink]="['/reminder']">
+        <div class="col-sm-3 col-md-3"><i class="fa fa-bell fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Reminder</div>
+        </a>
       </li>
       <hr style="border: 0.5px solid #918f8f" width="118%">
       <li class="itemList">
-        <!--<a href="@routes.HomeController.Trash()">-->
+        <a [routerLink]="['/trash']">
           <div class="col-sm-3 col-md-3"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Trash</div>
-
-        <!--</a>-->
+        </a>
       </li>
       <hr style="border: 0.5px solid #918f8f" width="118%">
     </ul>

@@ -22,6 +22,7 @@ export class LoginComponent  {
       .subscribe(
         data => {
           this.router.navigate(['/note']);
+
         },
         error => {
           console.log(error);
