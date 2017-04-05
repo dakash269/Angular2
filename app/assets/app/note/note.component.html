@@ -9,7 +9,7 @@
       <li class="active"><h1 class="zemofnt fontrobo colBlack ">Keep</h1></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <!--@*<li class="active padright"><a class="black" href="@routes.HomeController.logout">Signout</a></li>*@-->
+      <li class="active padright"><a class="black" [routerLink]="['/logout']">Signout</a></li>
     </ul>
     <div class="col-sm-8 col-md-8 padtopSearch">
       <form class="navbar-form" role="search">
@@ -18,7 +18,7 @@
         </div>
       </form>
     </div>
-    <div class="userName pull-right">@userEmail</div>
+    <div class="userName pull-right">{{data.user}}</div>
   </div>
 </nav>
 <div id="wrapper" class="toggled">
@@ -77,7 +77,7 @@
       </div>
     </div>
   </div>
-</div>
+
   <div class="padTopMore col-sm-12 col-md-12">
     <!--<div class="padTopMore col-sm-12 col-md-12" ng-cloak>-->
     <div class="row rowWithFullWidth col-sm-12 col-md-12">
@@ -107,6 +107,7 @@
       </div>
     </div>
   </div>
+</div>
 <!--</div>-->
 <!--@*<script src="@routes.Assets.versioned("/javascripts/controllers/MainController.js")"></script>*@-->
 <router-outlet></router-outlet>

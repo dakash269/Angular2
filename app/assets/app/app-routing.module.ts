@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'trash', component: TrashComponent },
   { path: 'reminder', component: ReminderComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'logout', component: LoginComponent },
   { path: '**', redirectTo: '' },
 ];
 

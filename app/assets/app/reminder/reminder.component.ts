@@ -19,6 +19,11 @@ export class ReminderComponent implements AfterViewInit {
     private authenticationService: AuthenticationService,
     private http: Http) {
     this.getReminder();
+    this.authenticationService.getusername()
+      .subscribe(
+        data => {
+          this.data.user = data;
+        });
     this.data = { id: this.data.id, title: this.data.title, user: this.data.user,
       content: this.data.content, reminder: this.data.reminder};
   }
@@ -28,6 +33,9 @@ export class ReminderComponent implements AfterViewInit {
     trigger.addEventListener('click', function(e) {
       e.preventDefault();
       element.classList.toggle('toggled');
+      let eleDiv = document.getElementById('ver');
+      if (eleDiv.style.visibility === 'visible') {eleDiv.style.visibility = 'hidden'; } else {
+        eleDiv .style.visibility = 'visible'; }
     });
   }
   public getReminder() {

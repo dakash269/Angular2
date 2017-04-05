@@ -22,7 +22,7 @@ public class HomeController extends Controller {
     return ok(session().get("email"));
   }
   public Result get() {
-    List<Notetaken1> card= Notetaken1.getData1();
+    List<Notetaken1> card= Notetaken1.getData1(session().get("email"));
     return ok(Json.toJson(card));
   }
   public Result reg() {
@@ -133,7 +133,7 @@ public class HomeController extends Controller {
     }
   public Result getReminder1()
   {
-    List<Notetaken1> card = Notetaken1.getReminder1();
+    List<Notetaken1> card = Notetaken1.getReminder1(session().get("email"));
     return ok(Json.toJson(card));
   }
 

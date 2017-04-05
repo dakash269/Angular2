@@ -8,7 +8,7 @@
     <li class="active"><h1 class="zemofnt fontrobo colBlack ">Archive</h1></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-    <!--<li class="active padright"><a class="black" href="@routes.HomeController.logout">Signout</a></li>-->
+      <li class="active padright"><a class="black" [routerLink]="['/logout']">Signout</a></li>
     </ul>
     <div class="col-sm-8 col-md-8 padtopSearch">
     <form class="navbar-form" role="search">
@@ -17,7 +17,7 @@
     </div>
     </form>
     </div>
-    <div class="userName pull-right">@userEmail</div>
+      <div class="userName1 pull-right">{{data.user}}</div>
   </div>
   </nav>
 <div id="wrapper" class="toggled">

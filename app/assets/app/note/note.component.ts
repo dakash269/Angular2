@@ -20,6 +20,11 @@ export class NoteComponent implements AfterViewInit {
     private http: Http) {
     this.getPosts();
     this.edited = false;
+    this.authenticationService.getusername()
+     .subscribe(
+      data => {
+        this.data.user = data;
+      });
     this.data = { id: this.data.id, title: this.data.title, user: this.data.user,
       content: this.data.content, reminder: this.data.reminder};
   }
@@ -37,7 +42,6 @@ export class NoteComponent implements AfterViewInit {
   .subscribe(
       data => {
         this.data.user = data;
-        console.log(this.data.user);
       });
     this.authenticationService.sendData(this.data.user, this.data.title, this.data.content, this.data.reminder)
       .subscribe(
