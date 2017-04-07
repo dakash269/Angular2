@@ -14,7 +14,7 @@
 .padTopMore  {margin-top:-2cm;}
 .signout{  color:black!important;margin-right:30px;margin-top:-63px  }
 body{ overflow-y: scroll; width: 100%;}
-.glyphicon:hover {background-color: rgba(0, 0, 0, 0.05);border:1px hidden grey;padding:5px;}
+/*.glyphicon:hover {background-color: rgba(0, 0, 0, 0.05);border:1px hidden grey;padding:5px;}*/
 #Trash{position:absolute;top:0;margin-left:100px;opacity:1;color:white}
 #archive{text-decoration:none;color:black;}
 #notes{text-decoration:none;color:black;}

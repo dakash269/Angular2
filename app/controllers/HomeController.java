@@ -8,7 +8,6 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Security;
-import views.html.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,6 +17,18 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class HomeController extends Controller {
+  @Security.Authenticated(Secured.class)
+ public Result index() {
+    return ok(views.html.index1.render());
+  }
+  public Result apiCall() {
+    Integer count=0;
+    JsonNode jsonNode = request().body().asJson();
+    count =jsonNode.path("count").asInt();
+    if(count==1) return redirect(routes.HomeController.index());
+    else return badRequest("bad");
+  }
+
   public Result getusername() {
     return ok(session().get("email"));
   }
@@ -47,6 +58,8 @@ public class HomeController extends Controller {
   }
   public Result log() {
     JsonNode jsonNode = request().body().asJson();
+//    System.out.println(jsonNode);
+    Integer count =jsonNode.path("count").asInt();
     String userEmail = jsonNode.path("userEmail").asText().toLowerCase();
     String userPassword = jsonNode.path("userPassword").asText();;
     Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(userEmail);
@@ -205,7 +218,7 @@ public class HomeController extends Controller {
     if (!Objects.equals(reminder, ""))
     {
       Date now = new Date();
-      SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+      SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("EEEE, MM/dd/yyyy HH:mm");
       SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm");
       try {
         reminder = simpleDateFormat1.format(simpleDateFormat.parse(reminder));
@@ -260,28 +273,28 @@ public class HomeController extends Controller {
     }
 
 
-    public Result regis() {
-        return ok(registration.render(""));
-    }
-
-    public Result login() {return ok(login.render("Login"));}
-
-    @Security.Authenticated(Secured.class)
-    public Result note() { return ok(note.render("note",session().get("email")));}
-
-    @Security.Authenticated(Secured.class)
-    public Result Reminder() {return ok(Reminder.render("Reminder",session().get("email")));}
-
-    @Security.Authenticated(Secured.class)
-    public Result Archive() { return ok(Archive.render("Archive",session().get("email")));}
-
-    @Security.Authenticated(Secured.class)
-    public Result Trash() { return ok(Trash.render("Trash",session().get("email")));}
+//    public Result regis() {
+//        return ok(registration.render(""));
+//    }
+//
+//    public Result login() {return ok(login.render("Login"));}
+//
+//    @Security.Authenticated(Secured.class)
+//    public Result note() { return ok(note.render("note",session().get("email")));}
+//
+//    @Security.Authenticated(Secured.class)
+//    public Result Reminder() {return ok(Reminder.render("Reminder",session().get("email")));}
+//
+//    @Security.Authenticated(Secured.class)
+//    public Result Archive() { return ok(Archive.render("Archive",session().get("email")));}
+//
+//    @Security.Authenticated(Secured.class)
+//    public Result Trash() { return ok(Trash.render("Trash",session().get("email")));}
 
     public Result logout() {
         session().clear();
         flash("success", "You've been logged out");
-        return redirect(routes.Application.index());
+        return redirect(routes.HomeController.index());
     }
     private static final Pattern VALID_EMAIL_ADDRESS_REGEX =
             Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);

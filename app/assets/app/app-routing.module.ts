@@ -7,7 +7,7 @@ import {NoteComponent}            from  './note/index';
 import {ArchiveComponent} from './archive/index';
 import {TrashComponent} from './trash/index';
 import {ReminderComponent} from './reminder/index';
-import { AuthGuard } from './guards/index';
+// import { AuthGuard } from './guards/index';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'reminder', component: ReminderComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LoginComponent },
-  { path: '**', redirectTo: '' },
+  { path: 'note', redirectTo: 'note' },
 ];
 
 @NgModule({

@@ -17,6 +17,8 @@ import {ReminderComponent} from './reminder/index';
 import {ArchiveComponent} from './archive/index';
 import { AuthGuard } from './guards/index';
 import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
+import {ModelComponent} from './model/model.component';
+// import {Autosize} from 'angular2-autosize';
 
 @NgModule({
   imports: [
@@ -37,7 +39,7 @@ import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
     ReminderComponent,
   ],
   providers: [
-    AuthenticationService, AlertService, Location,
+    AuthenticationService, AlertService, Location, ModelComponent,
     // AuthGuard
   ],
   bootstrap: [ AppComponent],

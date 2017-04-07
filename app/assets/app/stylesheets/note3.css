@@ -46,8 +46,8 @@
     min-height: 46px;
     padding: 10px 15px 0px 15px;
 }
-#sidebar-wrapper{margin-top: 35px}
-.glyphicon.glyphicon-menu-hamburger{font-size: 30px;margin-top: -10px; }
+#sidebar-wrapper{margin-top: 55px}
+.glyphicon.glyphicon-menu-hamburger{font-size: 20px;margin-top: -10px; }
 .zemofnt { margin-left: 50px }
 .userName{
   margin-right:10px;
@@ -61,7 +61,7 @@
     #sidebar-wrapper{margin-top: -30px}
     hr{opacity:0.5}
     .remindText{ font-size:30px}
-    .userName{  font-size: 30px; margin-top: 40px ;display:none}
+    .userName,.userName1{  font-size: 30px; margin-top: 40px ;display:none}
     .padTopMore{  margin-top: 100px;  }
     .zemofnt {  font-size: 80px; margin-top: 40px ;margin-left: 150px }
     .navbar{  height:150px}

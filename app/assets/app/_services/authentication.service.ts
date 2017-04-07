@@ -1,17 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
+import { tokenNotExpired } from 'angular2-jwt';
 import {Location} from '@angular/common';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-
 @Injectable()
 export class AuthenticationService {
-    constructor(private http: Http, private location: Location) { }
+    constructor(private http: Http, private location: Location, private router: Router) {
+    }
     public register(userName: string, userEmail: string, userPassword: string) {
       return this.http.post('/api/authenticate', { userName: userName, userEmail: userEmail, userPassword: userPassword });
     }
-  public login(userEmail: string, userPassword: string) {
-    return this.http.post('/api/go', { userEmail: userEmail, userPassword: userPassword });
+  public set(count: number) {
+    return this.http.post('/api', { count: count });
+  }
+  public login(count: number, userEmail: string, userPassword: string) {
+    return this.http.post('/api/go', { count: count, userEmail: userEmail, userPassword: userPassword });
   }
   public sendData(user: string, title: string, content: string, reminder: string) {
     return this.http.post('/api/postdata', { user: user, title: title, content: content, reminder: reminder });

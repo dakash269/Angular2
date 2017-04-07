@@ -1,116 +1,115 @@
-@(title: String,userEmail: String)
 
-<!DOCTYPE html>
-<html><head>
-    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/Archive.css")">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/cs/bootstrap-theme.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/start1.css")">
-    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/note3.css")">
-    <script type="text/javascript" src="@routes.Assets.versioned("javascripts/jquery-3.1.1.min.js")"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="@routes.Assets.versioned("font-awesome/css/font-awesome.min.css")">
-    <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.versioned("bootstrap/css/bootstrap.min.css")">
-    <script src="@routes.Assets.versioned("bootstrap/js/bootstrap.js")" type="text/javascript"></script>
-    <script type="text/javascript" src="@routes.Assets.versioned("javascripts/angular.min.js")"></script>
-    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/simple-sidebar.css")">
-    <script type="text/javascript" src="@routes.Assets.versioned("javascripts/hello.js")"></script>
-    <script type="text/javascript" src="@routes.Assets.versioned("javascripts/moment.js")"></script>
-    <script type="text/javascript" src="@routes.Assets.versioned("javascripts/bootstrap-datetimepicker.min.js")"></script>
-    <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/bootstrap-datetimepicker.min.css")">
+@*<!DOCTYPE html>*@
+@*<html><head>*@
+    @*<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/Archive.css")">*@
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">*@
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/cs/bootstrap-theme.min.css">*@
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>*@
+    @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>*@
+    @*<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/start1.css")">*@
+    @*<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/note3.css")">*@
+    @*<script type="text/javascript" src="@routes.Assets.versioned("javascripts/jquery-3.1.1.min.js")"></script>*@
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>*@
+    @*<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">*@
+    @*<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">*@
+    @*<link rel="stylesheet" href="@routes.Assets.versioned("font-awesome/css/font-awesome.min.css")">*@
+    @*<link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.versioned("bootstrap/css/bootstrap.min.css")">*@
+    @*<script src="@routes.Assets.versioned("bootstrap/js/bootstrap.js")" type="text/javascript"></script>*@
+    @*<script type="text/javascript" src="@routes.Assets.versioned("javascripts/angular.min.js")"></script>*@
+    @*<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/simple-sidebar.css")">*@
+    @*<script type="text/javascript" src="@routes.Assets.versioned("javascripts/hello.js")"></script>*@
+    @*<script type="text/javascript" src="@routes.Assets.versioned("javascripts/moment.js")"></script>*@
+    @*<script type="text/javascript" src="@routes.Assets.versioned("javascripts/bootstrap-datetimepicker.min.js")"></script>*@
+    @*<link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/bootstrap-datetimepicker.min.css")">*@
 
-    <style>body{background-color:#e8e8e8;}</style>
-</head>
-    <body>
+    @*<style>body{background-color:#e8e8e8;}</style>*@
+@*</head>*@
+    @*<body>*@
 
-        <nav class="navbar-custom navbar navbar-fixed-top">
-            <div class="navbar-header">
-                <div class="cent col-sm-1 col-md-1"><a href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a></div>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><h1 class="zemofnt fontrobo colBlack ">Archive</h1></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active padright"><a class="black" href="@routes.HomeController.logout">Signout</a></li>
-                </ul>
-                <div class="col-sm-8 col-md-8 padtopSearch">
-                    <form class="navbar-form" role="search">
-                        <div class="searchBox input-group">
-                            <input onfocus="myFunction()" type="text" class="search1 form-control" placeholder="Search" name="q">
-                        </div>
-                    </form>
-                </div>
-                <div class="userName pull-right">@userEmail</div>
-            </div>
-        </nav>
+        @*<nav class="navbar-custom navbar navbar-fixed-top">*@
+            @*<div class="navbar-header">*@
+                @*<div class="cent col-sm-1 col-md-1"><a href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></a></div>*@
+            @*</div>*@
+            @*<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">*@
+                @*<ul class="nav navbar-nav">*@
+                    @*<li class="active"><h1 class="zemofnt fontrobo colBlack ">Archive</h1></li>*@
+                @*</ul>*@
+                @*<ul class="nav navbar-nav navbar-right">*@
+                    @*<li class="active padright"><a class="black" href="@routes.HomeController.logout">Signout</a></li>*@
+                @*</ul>*@
+                @*<div class="col-sm-8 col-md-8 padtopSearch">*@
+                    @*<form class="navbar-form" role="search">*@
+                        @*<div class="searchBox input-group">*@
+                            @*<input onfocus="myFunction()" type="text" class="search1 form-control" placeholder="Search" name="q">*@
+                        @*</div>*@
+                    @*</form>*@
+                @*</div>*@
+                @*<div class="userName pull-right">@userEmail</div>*@
+            @*</div>*@
+        @*</nav>*@
 
-        <div id="wrapper" class="toggled">
-                <!-- Sidebar -->
-            <div id="sidebar-wrapper">
-                <ul class="sidebar-nav">
-                    <li class="itemList">
-                        <a href="@routes.HomeController.note()">
-                            <div class="col-sm-3 col-md-3"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Notes</div>
-                        </a>
-                    </li>
-                    <hr style="border: 0.5px solid #918f8f" width="118%">
-                    <li class="itemList">
-                        <a href="@routes.HomeController.Archive()">
-                            <div class="col-sm-3 col-md-3"><i class="fa fa-archive fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Archive</div>
+        @*<div id="wrapper" class="toggled">*@
+                @*<!-- Sidebar -->*@
+            @*<div id="sidebar-wrapper">*@
+                @*<ul class="sidebar-nav">*@
+                    @*<li class="itemList">*@
+                        @*<a href="@routes.HomeController.note()">*@
+                            @*<div class="col-sm-3 col-md-3"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Notes</div>*@
+                        @*</a>*@
+                    @*</li>*@
+                    @*<hr style="border: 0.5px solid #918f8f" width="118%">*@
+                    @*<li class="itemList">*@
+                        @*<a href="@routes.HomeController.Archive()">*@
+                            @*<div class="col-sm-3 col-md-3"><i class="fa fa-archive fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Archive</div>*@
 
-                        </a>
-                    </li>
-                    <hr style="border: 0.5px solid #918f8f" width="118%">
-                    <li class="itemList">
-                        <a href="@routes.HomeController.Reminder()">
-                            <div class="col-sm-3 col-md-3"><i class="fa fa-bell fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Reminder</div>
+                        @*</a>*@
+                    @*</li>*@
+                    @*<hr style="border: 0.5px solid #918f8f" width="118%">*@
+                    @*<li class="itemList">*@
+                        @*<a href="@routes.HomeController.Reminder()">*@
+                            @*<div class="col-sm-3 col-md-3"><i class="fa fa-bell fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Reminder</div>*@
 
-                        </a>
-                    </li>
-                    <hr style="border: 0.5px solid #918f8f" width="118%">
-                    <li class="itemList">
-                        <a href="@routes.HomeController.Trash()">
-                            <div class="col-sm-3 col-md-3"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Trash</div>
+                        @*</a>*@
+                    @*</li>*@
+                    @*<hr style="border: 0.5px solid #918f8f" width="118%">*@
+                    @*<li class="itemList">*@
+                        @*<a href="@routes.HomeController.Trash()">*@
+                            @*<div class="col-sm-3 col-md-3"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Trash</div>*@
 
-                        </a>
-                    </li>
-                    <hr style="border: 0.5px solid #918f8f" width="118%">
+                        @*</a>*@
+                    @*</li>*@
+                    @*<hr style="border: 0.5px solid #918f8f" width="118%">*@
 
-                </ul>
+                @*</ul>*@
 
-            </div>
-            <div class="vr"id="ver">&nbsp;</div>
-            <div id="myId1" ng-app="archive1"  ng-controller="archiveController">
-                <div class="padTopMore col-md-12" ng-cloak>
-                    <div class="row rowWithFullWidth col-md-12">
-                        <div id="items" class="no-padding col-md-10 col-md-offset-2">
-                            <div ng-repeat="post in posts">
-                                <div class="col-md-3 eachCard" >
-                                    <div class="card" ng-clock>
-                                        <input ng-model="id" name="id" ng-value="post.id" type="hidden">
-                                        <div class="clickd">
-                                            <div name="title" class="title wordWrap" contenteditable="false" ng-cloak>{{ post.title}}</div>
-                                            <div name="content" class="content wordWrap" contenteditable="false" ng-cloak>{{ post.content}}</div>
-                                            <div name="reminder" class="remind" contenteditable="false"><div class="remindText" ng-cloak>{{post.reminder}}</div></div>
-                                        </div>
-                                        <div class="toolbar">
-                                            <div class="inner col-md-offset-2">
-                                                <div class="col-md-3"><a ng-click="delA(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Delete Note" class="fa fa-trash fa-lg" aria-hidden="true"></i></a></div>
-                                                <div class="col-md-3"><a ng-click="unarchive(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Unarchive Note"  class="glyphicon glyphicon-inbox" aria-hidden="true"></i></a></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="@routes.Assets.versioned("/javascripts/controllers/MainController.js")"></script>
-    </body></html>
+            @*</div>*@
+            @*<div class="vr"id="ver">&nbsp;</div>*@
+            @*<div id="myId1" ng-app="archive1"  ng-controller="archiveController">*@
+                @*<div class="padTopMore col-md-12" ng-cloak>*@
+                    @*<div class="row rowWithFullWidth col-md-12">*@
+                        @*<div id="items" class="no-padding col-md-10 col-md-offset-2">*@
+                            @*<div ng-repeat="post in posts">*@
+                                @*<div class="col-md-3 eachCard" >*@
+                                    @*<div class="card" ng-clock>*@
+                                        @*<input ng-model="id" name="id" ng-value="post.id" type="hidden">*@
+                                        @*<div class="clickd">*@
+                                            @*<div name="title" class="title wordWrap" contenteditable="false" ng-cloak>{{ post.title}}</div>*@
+                                            @*<div name="content" class="content wordWrap" contenteditable="false" ng-cloak>{{ post.content}}</div>*@
+                                            @*<div name="reminder" class="remind" contenteditable="false"><div class="remindText" ng-cloak>{{post.reminder}}</div></div>*@
+                                        @*</div>*@
+                                        @*<div class="toolbar">*@
+                                            @*<div class="inner col-md-offset-2">*@
+                                                @*<div class="col-md-3"><a ng-click="delA(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Delete Note" class="fa fa-trash fa-lg" aria-hidden="true"></i></a></div>*@
+                                                @*<div class="col-md-3"><a ng-click="unarchive(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Unarchive Note"  class="glyphicon glyphicon-inbox" aria-hidden="true"></i></a></div>*@
+                                            @*</div>*@
+                                        @*</div>*@
+                                    @*</div>*@
+                                @*</div>*@
+                            @*</div>*@
+                        @*</div>*@
+                    @*</div>*@
+                @*</div>*@
+            @*</div>*@
+        @*</div>*@
+        @*<script src="@routes.Assets.versioned("/javascripts/controllers/MainController.js")"></script>*@
+    @*</body></html>*@

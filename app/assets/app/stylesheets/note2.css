@@ -8,9 +8,11 @@
     font-family: 'Roboto', sans-serif;
     outline: none;
     font-size: 30px;
+  /*font-size: 3.5vw;*/
     line-height: 19px;
     min-height: 46px;
     padding: 0 15px 0 15px;
+  /*text-size-adjust: auto;*/
 }
 .content1{font-size:25px;padding-top: 10px}
 
@@ -46,11 +48,13 @@
     min-height: 46px;
     padding: 10px 15px 0px 15px;
 }
-.glyphicon.glyphicon-menu-hamburger{font-size: 30px;margin-top: -10px; }
+.glyphicon.glyphicon-menu-hamburger{font-size: 20px;margin-top: -10px; }
 .zemofnt { margin-left: 50px }
 .userName{  margin-right:10px }
 @media screen and  (max-width: 980px)
 {
+  #sidebar-wrapper{margin-top: -2cm}
+    .form-group{margin-top: 5cm}
     .userName{  font-size: 30px; margin-top: 40px ;display:none}
     .zemofnt {  font-size: 80px; margin-top: 40px ;margin-left: 150px }
     .navbar{  height:150px}
@@ -59,9 +63,10 @@
     .black{font-size: 50px;margin-right: 180px;margin-top:50px}
     .glyphicon.glyphicon-menu-hamburger{font-size: 50px;margin-left: 30px;margin-top: 30px}
     #contentDiv{height:2.25cm;font-size:35px}
-    .remind1,.toolbarDiv,.timeInp,.done {font-size: 30px}
+    .remind1,.toolbarDiv,.timeInp {font-size: 30px}
+    .done{font-size: 50px}
     .itemList{font-size: 35px;height: 40px;margin-top: 100px;margin-left: -30px}
-    .timeInp{width:400%;margin-left: -20px}
+    .timeInp{width:250%;margin-left: -20px}
 }
 [contenteditable=true]:empty:before {
     content: attr(placeholder);

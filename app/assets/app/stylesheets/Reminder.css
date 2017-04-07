@@ -16,7 +16,7 @@
     .vr{ bottom:520px;}
 }
 body{ overflow-y: scroll; width: 100%;}
-.glyphicon:hover {background-color: rgba(0, 0, 0, 0.05);border:1px hidden grey;padding:5px;}
+/*.glyphicon:hover {background-color: rgba(0, 0, 0, 0.05);border:1px hidden grey;padding:5px;}*/
 #Reminder{position:absolute;top:0;margin-left:85px;opacity:1;color:white}
 #notes{text-decoration:none;color:black;}
 #archive{text-decoration:none;color:black;}

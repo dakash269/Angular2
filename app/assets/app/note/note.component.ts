@@ -1,7 +1,8 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Http, Headers, Response } from '@angular/http';
+import { Component, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Http } from '@angular/http';
 import { AuthenticationService } from '../_services/index';
+import {ModelComponent} from '../model/model.component';
 @Component({
   selector: 'note',
   templateUrl: 'assets/app/note/note.component.html',
@@ -14,11 +15,19 @@ export class NoteComponent implements AfterViewInit {
   public data: any = {};
   public posts: Object = [];
   public edited: any = {};
+  private big = true;
+  private get myStyles(): any {
+    return {
+      'font-size' : this.big ? '30px' : '7px',
+    };
+  }
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService,
+    private modelContent: ModelComponent,
     private http: Http) {
     this.getPosts();
+    console.log(screen.width);
     this.edited = false;
     this.authenticationService.getusername()
      .subscribe(
@@ -28,12 +37,22 @@ export class NoteComponent implements AfterViewInit {
     this.data = { id: this.data.id, title: this.data.title, user: this.data.user,
       content: this.data.content, reminder: this.data.reminder};
   }
+public mod() {
+  // if (window.confirm('Are you sure?')) {
+  // }
+  let element = document.getElementById('a');
+  if (element.style.visibility === 'visible') {element.style.visibility = 'hidden'; } else {
+    element .style.visibility = 'visible'; }
+}
   public ngAfterViewInit() {
     let element = document.getElementById('wrapper');
     let trigger = document.getElementById('menu-toggle');
     trigger.addEventListener('click', function(e) {
       e.preventDefault();
       element.classList.toggle('toggled');
+      let eleDiv = document.getElementById('ver');
+      if (eleDiv.style.visibility === 'visible') {eleDiv.style.visibility = 'hidden'; } else {
+        eleDiv .style.visibility = 'visible'; }
     });
   }
   public sendData() {

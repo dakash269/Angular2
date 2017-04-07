@@ -48,6 +48,7 @@
           <div class="col-sm-3 col-md-3"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">Trash</div>
         </a>
       </li>
+      <hr style="border: 0.5px solid #918f8f" width="118%">
     </ul>
   </div>
   <div class="form-group">
@@ -60,7 +61,7 @@
       </div>
       <div id="contentDiv" class="content1">
         <!--<textarea ng-focus="showRest = true" [(ngModel)]="content" placeholder="Take a note..." name="content"></textarea>-->
-        <textarea  [(ngModel)]="data.content" (focus)="onFocus(edited)" placeholder="Take a note..." name="content"></textarea>
+        <textarea  [(ngModel)]="data.content"  (focus)="onFocus(edited)" placeholder="Take a note..." name="content" ></textarea>
       </div>
 
       <div  id="toolbarDiv" *ngIf="edited" class="toolbar" >
@@ -71,13 +72,13 @@
           <!--<input--><!--[(ngModel)]="data.reminder" ngui-datetime-picker  date-only="true" />-->
         </div>
 
-        <div class="col-sm-10 col-md-10">
+        <!--<div class="col-sm-10 col-md-10">-->
           <div align="right" > <button class="done" (click)="sendData()">Done</button> </div>
-        </div>
+        <!--</div>-->
       </div>
     </div>
   </div>
-
+  <div class="vr" id="ver">&nbsp;</div>
   <div class="padTopMore col-sm-12 col-md-12">
     <!--<div class="padTopMore col-sm-12 col-md-12" ng-cloak>-->
     <div class="row rowWithFullWidth col-sm-12 col-md-12">
@@ -88,8 +89,8 @@
               <!--<div class="card" ng-clock>-->
               <!--<input [(ngModel)]="id" name="id" [ngValue]="post.id" type="hidden">-->
               <div class="clickd">
-                <div name="title" class="title wordWrap" contenteditable="false" >{{ post.title}}</div>
-                <div name="content" class="content wordWrap" contenteditable="false">{{ post.content}}</div>
+                <div name="title" [ngStyle]="myStyles" class="title wordWrap" contenteditable="false" >{{ post.title}}</div>
+                <div name="content"  id="Div" class="content wordWrap" contenteditable="false">{{ post.content}}</div>
                 <div name="reminder" class="remind1" contenteditable="false"><div class="remindText" >{{post.reminder}}</div></div>
                 <!--<div name="title" class="title wordWrap" contenteditable="false" ng-cloak>{{ post.title}}</div>-->
                 <!--<div name="content" class="content wordWrap" contenteditable="false" ng-cloak>{{ post.content}}</div>-->
@@ -99,12 +100,31 @@
                 <div class="inner col-sm-offset-2 col-md-offset-2">
                   <div class="col-sm-3 col-md-3"><a (click)="del(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Delete Note" class="fa fa-trash fa-lg" aria-hidden="true"></i></a></div>
                   <div class="col-sm-3 col-md-3"><a (click)="archive(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Archive Note" class="fa fa-archive fa-lg" aria-hidden="true"></i></a></div>
+                  <div class="col-sm-3 col-md-3">
+                    <a (click)="mod()"><i data-toggle="tooltip" data-placement="bottom"  class="fa fa-bell fa-lg" aria-hidden="true"></i></a>
+
+
+
+                  <!--<div class="col-sm-3 col-md-3"><a (click)="del(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Delete Note" class="fa fa-trash fa-lg" aria-hidden="true"></i></a></div>-->
+                  <!--<div class="col-sm-3 col-md-3"><a (click)="archive(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Archive Note" class="fa fa-archive fa-lg" aria-hidden="true"></i></a></div>-->
                 </div>
               </div>
             </div>
+
           </div>
+
         </div>
+
       </div>
+    </div>
+  </div>
+</div>
+  <div class="note col-sm-3  col-md-3 " id="a" >
+    <div class="toolbar" >
+      <div class="col-sm-4 col-md-4">
+        <input [(ngModel)]="data.reminder"  class="timeInp datetimepicker4"  name="reminder" placeholder="Set Reminder"/>
+      </div>
+      <div align="right" > <button class="done" (click)="sendData()">Done</button> </div>
     </div>
   </div>
 </div>
