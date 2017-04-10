@@ -38,6 +38,16 @@ export class ArchiveComponent implements AfterViewInit {
         eleDiv .style.visibility = 'visible'; }
     });
   }
+  public logout() {
+    this.authenticationService.logout()
+      .subscribe(
+        data => {
+          this.router.navigate(['/logout']);
+        },
+        error => {
+          this.data.alertMessage = error._body;
+        });
+  }
   public getArchive() {
     this.authenticationService.getArchive()
       .subscribe(arg => this.posts = arg);

@@ -1,7 +1,7 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {AppComponent}            from './app.component';
-// import {AppComponent1}            from './app.component1';
+// import {AppComponent}            from './app.component';
+import {AppComponent1}            from './app.component1';
 import {LoginComponent}         from './login/index';
 import {RegisterComponent}         from './register/index';
 import {NoteComponent}            from  './note/index';
@@ -11,7 +11,7 @@ import {ReminderComponent} from './reminder/index';
 import { AuthGuard } from './guards/index';
 const routes: Routes = [
   // { path: '', redirectTo: 'note', pathMatch: 'full' },
-  { path: '', component: NoteComponent  },
+  { path: '', component: LoginComponent  },
   { path: 'register', component: RegisterComponent },
   { path: 'note', component: NoteComponent },
   // { path: '', component: NoteComponent, canActivate: [AuthGuard]  },
@@ -27,4 +27,4 @@ const routes: Routes = [
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule1 {}

@@ -27,6 +27,16 @@ export class TrashComponent implements AfterViewInit {
     this.data = { id: this.data.id, title: this.data.title, user: this.data.user,
       content: this.data.content, reminder: this.data.reminder};
   }
+  public logout() {
+    this.authenticationService.logout()
+      .subscribe(
+        data => {
+          this.router.navigate(['/logout']);
+        },
+        error => {
+          this.data.alertMessage = error._body;
+        });
+  }
   public ngAfterViewInit() {
     let element = document.getElementById('wrapper');
     let trigger = document.getElementById('menu-toggle');

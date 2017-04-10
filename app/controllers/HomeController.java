@@ -8,6 +8,7 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Security;
+//import views.html.login;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -16,18 +17,29 @@ import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 public class HomeController extends Controller {
+ public Result index1() {
+   System.out.println(session().toString()+"index2");
+   if(session().get("email")==null || session().get("email").equals("")) {
+     System.out.println("why");
+     return ok(views.html.index1.render());
+   }
+   else
+     return ok(views.html.index.render(session().get("email")));
+  }
   @Security.Authenticated(Secured.class)
- public Result index() {
-    return ok(views.html.index1.render());
+  public Result index() {
+//    System.out.println("hi"+session());
+    return ok(views.html.index.render(session().get("email")));
   }
-  public Result apiCall() {
-    Integer count=0;
-    JsonNode jsonNode = request().body().asJson();
-    count =jsonNode.path("count").asInt();
-    if(count==1) return redirect(routes.HomeController.index());
-    else return badRequest("bad");
-  }
+//  public Result apiCall() {
+//    Integer count=0;
+//    JsonNode jsonNode = request().body().asJson();
+////    count =jsonNode.path("count").asInt();
+//    if(count==0) return redirect(routes.HomeController.index());
+//    else return badRequest("bad");
+//  }
 
   public Result getusername() {
     return ok(session().get("email"));
@@ -80,48 +92,48 @@ public class HomeController extends Controller {
       }
     }
   }
-  public Result register() {
-    JsonNode jsonNode = request().body().asJson();
-    String userName = jsonNode.path("userName").asText();
-    String userEmail = jsonNode.path("userEmail").asText().toLowerCase();
-    String userPassword = jsonNode.path("userPassword").asText();
-    Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(userEmail);
-    if (userEmail.equals("") || userPassword.equals("") || userName.equals("") || userEmail.equals("") || userPassword.equals("") || userName.equals("")) {
-      return badRequest("Fields cannot be empty or null.");
-    } else if (!matcher.find()) {
-      return badRequest("Not a valid email! Please try again.");
-    } else if (Registration.isPresent(userEmail) != null) {
-      return badRequest("Mail id is already registered.Try logging in!!");
-    } else {
-      Registration reg = new Registration(userName, userEmail, userPassword);
-      reg.save();
-      session().clear();
-      session("email", userEmail);
-      return ok("Success");
-    }
-  }
-  public Result loginnow() {
-    JsonNode jsonNode = request().body().asJson();
-    String userEmail = jsonNode.path("userEmail").asText().toLowerCase();
-    String userPassword = jsonNode.path("userPassword").asText();
-    Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(userEmail);
-    if (!matcher.find()) {
-      return badRequest("Not a valid email!! Please try again.");
-    }
-    Registration user = Ebean.find(Registration.class).where().eq("userEmail", userEmail).findUnique();
-    if (user == null) {
-      return badRequest("Email is not registered!!");
-    } else {
-      String db_password = user.getUserPassword();
-      if ((userPassword.equals(db_password))) {
-        session().clear();
-        session("email", userEmail);
-        return ok("Login Successs");
-      } else {
-        return badRequest("Password is wrong! Please try again.");
-      }
-    }
-  }
+//  public Result register() {
+//    JsonNode jsonNode = request().body().asJson();
+//    String userName = jsonNode.path("userName").asText();
+//    String userEmail = jsonNode.path("userEmail").asText().toLowerCase();
+//    String userPassword = jsonNode.path("userPassword").asText();
+//    Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(userEmail);
+//    if (userEmail.equals("") || userPassword.equals("") || userName.equals("") || userEmail.equals("") || userPassword.equals("") || userName.equals("")) {
+//      return badRequest("Fields cannot be empty or null.");
+//    } else if (!matcher.find()) {
+//      return badRequest("Not a valid email! Please try again.");
+//    } else if (Registration.isPresent(userEmail) != null) {
+//      return badRequest("Mail id is already registered.Try logging in!!");
+//    } else {
+//      Registration reg = new Registration(userName, userEmail, userPassword);
+//      reg.save();
+//      session().clear();
+//      session("email", userEmail);
+//      return ok("Success");
+//    }
+//  }
+//  public Result loginnow() {
+//    JsonNode jsonNode = request().body().asJson();
+//    String userEmail = jsonNode.path("userEmail").asText().toLowerCase();
+//    String userPassword = jsonNode.path("userPassword").asText();
+//    Matcher matcher = VALID_EMAIL_ADDRESS_REGEX.matcher(userEmail);
+//    if (!matcher.find()) {
+//      return badRequest("Not a valid email!! Please try again.");
+//    }
+//    Registration user = Ebean.find(Registration.class).where().eq("userEmail", userEmail).findUnique();
+//    if (user == null) {
+//      return badRequest("Email is not registered!!");
+//    } else {
+//      String db_password = user.getUserPassword();
+//      if ((userPassword.equals(db_password))) {
+//        session().clear();
+//        session("email", userEmail);
+//        return ok("Login Successs");
+//      } else {
+//        return badRequest("Password is wrong! Please try again.");
+//      }
+//    }
+//  }
 
     public Result getArchive(){
         List<Notetaken1> card= Notetaken1.getArchive(session().get("email"));
@@ -277,7 +289,7 @@ public class HomeController extends Controller {
 //        return ok(registration.render(""));
 //    }
 //
-//    public Result login() {return ok(login.render("Login"));}
+//    public Result login() {return ok(login.render("login"));}
 //
 //    @Security.Authenticated(Secured.class)
 //    public Result note() { return ok(note.render("note",session().get("email")));}
@@ -293,8 +305,9 @@ public class HomeController extends Controller {
 
     public Result logout() {
         session().clear();
+        System.out.println(session()+"logout");
         flash("success", "You've been logged out");
-        return redirect(routes.HomeController.index());
+        return redirect(routes.HomeController.index1());
     }
     private static final Pattern VALID_EMAIL_ADDRESS_REGEX =
             Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);

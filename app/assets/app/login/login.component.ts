@@ -17,23 +17,35 @@ export class LoginComponent  {
     private router: Router,
     private authenticationService: AuthenticationService,
     private http: Http) {
-    this.data = { count: this.count, userEmail: this.data.userEmail,
-      userPassword: this.data.userPassword, alertMessage: this.data.alertMessage}; }
-  public login() {
-    this.authenticationService.set(this.data.count)
+    this.authenticationService.getusername()
       .subscribe(
         data => {
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-          this.data.alertMessage = error._body;
+          this.data.user = data;
         });
+    this.data = { count: this.count, userEmail: this.data.userEmail,
+      userPassword: this.data.userPassword, alertMessage: this.data.alertMessage}; }
+
+  public login() {
+    this.authenticationService.getusername()
+      .subscribe(
+        data => {
+          this.data.user = data;
+        });
+    // this.authenticationService.set(this.data.count)
+    //   .subscribe(
+    //     data => {
+    //       console.log(data);
+    //     },
+    //     error => {
+    //       console.log(error);
+    //       this.data.alertMessage = error._body;
+    //     });
     this.authenticationService.login(this.data.count, this.data.userEmail, this.data.userPassword)
       .subscribe(
         data => {
+          console.log('data');
+          // return this.http.get('/note');
           this.router.navigate(['/note']);
-
         },
         error => {
           console.log(error);

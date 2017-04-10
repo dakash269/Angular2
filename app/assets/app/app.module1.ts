@@ -6,7 +6,7 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import {RouterModule} from '@angular/router';
 import {Location} from '@angular/common';
-import { AppRoutingModule } from './app-routing.module';
+// import { AppRoutingModule } from './app-routing.module';
 import { AppRoutingModule1 } from './app-routing.module1';
 import { AppComponent }         from './app.component';
 import { AppComponent1 }         from './app.component1';
@@ -27,7 +27,7 @@ import {ModelComponent} from './model/model.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule,
+    // AppRoutingModule,
     AppRoutingModule1,
     RouterModule,
     // NguiDatetimePickerModule,
@@ -46,12 +46,12 @@ import {ModelComponent} from './model/model.component';
     AuthenticationService, AlertService, Location, ModelComponent,
     // AuthGuard
   ],
-  bootstrap: [ AppComponent],
+  bootstrap: [ AppComponent1],
 })
-export class AppModule { }
+export class AppModule1 { }
 
 /*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
+ Copyright 2016 Google Inc. All Rights Reserved.
+ Use of this source code is governed by an MIT-style license that
+ can be found in the LICENSE file at http://angular.io/license
+ */

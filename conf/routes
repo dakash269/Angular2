@@ -3,8 +3,8 @@
 # ~~~~
 
 # Home page
-GET     /                           @controllers.HomeController.index
-POST    /api                           @controllers.HomeController.index
+GET     /                           @controllers.HomeController.index1
+#POST    /api                           @controllers.HomeController.apiCall
 GET     /note                       @controllers.HomeController.index
 GET     /archive                       @controllers.HomeController.index
 GET     /trash                       @controllers.HomeController.index
@@ -12,6 +12,7 @@ GET     /reminder                       @controllers.HomeController.index
 GET    /getusername        @controllers.HomeController.getusername
 POST    /api/authenticate             @controllers.HomeController.reg
 POST    /api/go             @controllers.HomeController.log
+GET     /logout                          @controllers.HomeController.logout
 POST    /api/postdata             @controllers.HomeController.send
 GET     /api/get                 @controllers.HomeController.get
 # Map static resources from the /public folder to the /assets URL path
@@ -38,8 +39,8 @@ GET     /api/getReminder                    @controllers.HomeController.getRemin
 
 #GET     /login                               @controllers.HomeController.login
 #GET     /regis                          @controllers.HomeController.regis
-POST     /regis                          @controllers.HomeController.register
-POST     /                          @controllers.HomeController.loginnow
+#POST     /regis                          @controllers.HomeController.register
+#POST     /                          @controllers.HomeController.loginnow
 
 #GET     /note                          @controllers.HomeController.note
 #GET     /note1                          @controllers.HomeController.note1
@@ -47,7 +48,7 @@ POST     /                          @controllers.HomeController.loginnow
 #GET     /Trash                         @controllers.HomeController.Trash
 #GET     /Reminder                      @controllers.HomeController.Reminder
 
-GET     /logout                          @controllers.HomeController.logout
+#GET     /logout                          @controllers.HomeController.logout
 
 POST	/addPost					         @controllers.HomeController.addNotetaken()
 

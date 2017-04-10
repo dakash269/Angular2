@@ -18,6 +18,7 @@ export class AuthenticationService {
   public login(count: number, userEmail: string, userPassword: string) {
     return this.http.post('/api/go', { count: count, userEmail: userEmail, userPassword: userPassword });
   }
+
   public sendData(user: string, title: string, content: string, reminder: string) {
     return this.http.post('/api/postdata', { user: user, title: title, content: content, reminder: reminder });
   }
@@ -43,7 +44,9 @@ export class AuthenticationService {
   public  getusername() {
       return this.http.get('/getusername').map((res: Response) => { return res.text(); });
   }
-
+public logout() {
+    return this.http.get('/logout').map((res: Response) => { return res.text(); });
+  }
   public  getUser() {
     return this.http.get('/api/get').map((res: Response) => { return res.json(); });
   }
