@@ -42,7 +42,8 @@
 }
 .glyphicon.glyphicon-menu-hamburger{color: black; opacity: 0.7}
 #myBtn1,#myBtn2{text-decoration: none;color:black;}
-.form-group{margin-left:120px;margin-top:75px;}
+.form-group{margin-left:120px;margin-top:75px; }
+.form-control{border-radius: 20px}
 .padTopMore  {margin-top:-0.3cm;}
 .signout{  color:black!important;margin-right:27px;margin-top:-65px;  }
 body{ overflow-y: scroll; width: 100%;}

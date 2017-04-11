@@ -8,6 +8,7 @@
     left:250px;
     visibility: hidden;
 }
+.navbar-custom{background-color:rgb(99, 99, 99)}
 @media screen and  (max-width: 950px) {
     .vr {  bottom: 520px;  }
 }

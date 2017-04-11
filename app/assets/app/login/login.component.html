@@ -1,19 +1,19 @@
-<div class="col-md-6 col-md-offset-3">
-  <h2>Login</h2>
+<div class="col-sm-9 col-sm-offset-1 col-md-6 col-md-offset-3">
+  <h2><div class="user1">Login </div> </h2>
   <form name="form" (ngSubmit)="login()" #f="ngForm" novalidate>
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !userEmail.valid }">
-      <label >UserEmail</label>
+      <label class="userr">UserEmail</label>
       <input type="text" class="form-control" name="username" [(ngModel)]="data.userEmail" #userEmail="ngModel" required />
       <div *ngIf="f.submitted && !userEmail.valid" class="help-block">userEmail is required</div>
     </div>
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !userPassword.valid }">
-      <label >Password</label>
+      <label class="userr" >Password</label>
       <input type="password" class="form-control" name="password" [(ngModel)]="data.userPassword" #userPassword="ngModel" required />
       <div *ngIf="f.submitted && !userPassword.valid" class="help-block">Password is required</div>
     </div>
     <div class="form-group">
-      <button [disabled]="loading" class="btn btn-primary">Login</button>
-      <a [routerLink]="['/register']" class="btn btn-link" >Register</a>
+      <button [disabled]="loading" class="user btn btn-primary">Login</button>
+      <a [routerLink]="['/register']" class="user btn btn-link" >Register</a>
     </div>
     <div *ngIf="data.alertMessage" style="color: red"> {{data.alertMessage}}</div>
   </form>

@@ -47,13 +47,14 @@
     padding: 10px 15px 0px 15px;
 }
 #sidebar-wrapper{margin-top: 55px}
-.glyphicon.glyphicon-menu-hamburger{font-size: 20px;margin-top: -10px; }
-.zemofnt { margin-left: 50px }
+.glyphicon.glyphicon-menu-hamburger{font-size: 20px;margin-left: 5px;margin-top: 2px }
+.zemofnt { margin-left: 23px }
 .userName{
+  margin-top: -2px;
   margin-right:10px;
   padding-top: 23px;
   font-family: 'Roboto', sans-serif;
-  color: #0f0f0f;
+  color: white;
   opacity: .8;
 }
 @media screen and  (max-width: 980px)
@@ -68,6 +69,7 @@
     #myId{margin-top: 220px;}
     .padtopSearch{margin-top: -40px;margin-left: -30px;display: none}
     .black{font-size: 50px;margin-right: 180px;margin-top:50px}
+  .black1{font-size: 50px;margin-right: 80px;margin-top:55px}
     .glyphicon.glyphicon-menu-hamburger{font-size: 50px;margin-left: 30px;margin-top: 30px}
     #contentDiv{height:2.25cm;font-size:35px}
     .remind1,.toolbarDiv,.timeInp,.done {font-size: 30px}
@@ -194,8 +196,13 @@ button.close{
     margin-right: 0 !important;
 }
 .itemList{
-    width: 100%;
-    height: 40px;
+  font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  width: 100%;
+  height: 50px;
+  font-size: 13px;
+  padding-top: 7.5px;
+  color: blue;
+  margin-left: -30px;
 }
 .itemList:hover{
     background-color: #E2E2E2;
@@ -244,7 +251,7 @@ button.close{
     height:50px!important;
     border-radius:5px!important;
 }
-.search:focus {
+.search1:focus {
     opacity: 1;
     background-color: white!important;
     border-color: transparent!important;
@@ -258,9 +265,13 @@ a :hover{
 .white{
     color: white!important;
 }
-
+.black,.black1{color:white;
+  cursor: pointer;margin-top: -2px}
 .black:hover{
     color:white!important;
+}
+.black1:hover{
+  color:white!important;
 }
 .white:hover{
     color:white!important;

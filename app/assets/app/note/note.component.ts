@@ -65,6 +65,7 @@ public mod() {
       if (eleDiv.style.visibility === 'visible') {eleDiv.style.visibility = 'hidden'; } else {
         eleDiv .style.visibility = 'visible'; }
     });
+    // document.getElementById('{{post.reminder}}').style.color = 'blue';
   }
   public sendData() {
     this.edited = false;

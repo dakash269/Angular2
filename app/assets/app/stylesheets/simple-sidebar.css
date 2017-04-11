@@ -64,7 +64,9 @@ body {
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: black;
+  font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  opacity: 0.54;
 }
 
 .sidebar-nav li a:hover {

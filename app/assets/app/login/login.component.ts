@@ -8,6 +8,7 @@ import { AlertService, AuthenticationService } from '../_services/index';
     // moduleId: module.id,
   selector: 'log',
     templateUrl: 'assets/app/login/login.component.html',
+  styleUrls: ['assets/app/stylesheets/login.css'],
 })
 
 export class LoginComponent  {

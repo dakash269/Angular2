@@ -1,6 +1,6 @@
 
 #myId{margin-top: 120px;}
-.remind1{font-size: 25px;background-color: rgb(250, 250, 250);}
+.remind1{font-size: 15px;background-color: rgb(250, 250, 250);text-align: center;padding-top: 10px}
 .content,.content1{
     width:100%;
     background-color: rgb(250, 250, 250);
@@ -8,13 +8,11 @@
     font-family: 'Roboto', sans-serif;
     outline: none;
     font-size: 30px;
-  /*font-size: 3.5vw;*/
     line-height: 19px;
     min-height: 46px;
     padding: 0 15px 0 15px;
-  /*text-size-adjust: auto;*/
 }
-.content1{font-size:25px;padding-top: 10px}
+.content1{font-size:25px;padding-top: 5px}
 
 .title{
     min-height:46px;
@@ -36,6 +34,8 @@
 }
 .remindText{
     opacity: 0.6;
+  border:0;
+  border-top: 2px dotted rgba(0,0,0,0.15);
 }
 .toolbar{
     width:100%;
@@ -48,9 +48,10 @@
     min-height: 46px;
     padding: 10px 15px 0px 15px;
 }
-.glyphicon.glyphicon-menu-hamburger{font-size: 20px;margin-top: -10px; }
-.zemofnt { margin-left: 50px }
+.glyphicon.glyphicon-menu-hamburger{font-size: 20px; margin-left: 5px;margin-top: 2px}
+.zemofnt { margin-left: 23px }
 .userName{  margin-right:10px }
+#sidebar-wrapper{margin-top: -0.7cm}
 @media screen and  (max-width: 980px)
 {
   #sidebar-wrapper{margin-top: -2cm}
@@ -79,7 +80,9 @@
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 2px 5px #888888;
+  /*-webkit-border-radius: 20px;*/
 }
+/*.hi{margin-left: 50px}*/
 body{
     background-color: lightblue;
 }
@@ -109,8 +112,6 @@ body{
     display: inline;
     margin-left: 10px;
     margin-right: 10px;
-
-
 }
 .container {
     position: relative;
@@ -140,6 +141,7 @@ textarea{
 .card{
     box-shadow: 0 2px 5px #888888;
     width:100%;
+  /*border-radius: 25px;*/
 }
 button.close{
     padding-right: 10px;
@@ -188,8 +190,13 @@ button.close{
     margin-right: 0 !important;
 }
 .itemList{
+  font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
     width: 100%;
-    height: 40px;
+    height: 50px;
+  font-size: 13px;
+  padding-top: 7.5px;
+  color: blue;
+  margin-left: -30px;
 }
 .itemList:hover{
     background-color: #E2E2E2;
@@ -238,7 +245,7 @@ button.close{
     height:50px!important;
     border-radius:5px!important;
 }
-.search:focus {
+.search1:focus {
     opacity: 1;
     background-color: white!important;
     border-color: transparent!important;
@@ -251,6 +258,7 @@ a :hover{
 }
 .userName{
     padding-top: 23px;
+  margin-top: -2px;
     font-family: 'Roboto', sans-serif;
     color: #0f0f0f;
     opacity: .8;
@@ -259,7 +267,7 @@ a :hover{
 .white{
     color: white!important;
 }
-
+.black{cursor: pointer;color: black;margin-top: -2px}
 .black:hover{
     color:white!important;
 }

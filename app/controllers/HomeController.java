@@ -20,9 +20,7 @@ import java.util.regex.Pattern;
 
 public class HomeController extends Controller {
  public Result index1() {
-   System.out.println(session().toString()+"index2");
    if(session().get("email")==null || session().get("email").equals("")) {
-     System.out.println("why");
      return ok(views.html.index1.render());
    }
    else
@@ -30,17 +28,8 @@ public class HomeController extends Controller {
   }
   @Security.Authenticated(Secured.class)
   public Result index() {
-//    System.out.println("hi"+session());
     return ok(views.html.index.render(session().get("email")));
   }
-//  public Result apiCall() {
-//    Integer count=0;
-//    JsonNode jsonNode = request().body().asJson();
-////    count =jsonNode.path("count").asInt();
-//    if(count==0) return redirect(routes.HomeController.index());
-//    else return badRequest("bad");
-//  }
-
   public Result getusername() {
     return ok(session().get("email"));
   }
@@ -242,8 +231,11 @@ public class HomeController extends Controller {
       { System.out.println("Exception " + ex);}
     }
     else
-    {Notetaken1 posts = new Notetaken1(user, title, content, "", isArchive, isTrash);
-      posts.save();}
+    {
+      Notetaken1 posts = new Notetaken1(user, title, content, "", isArchive, isTrash);
+      if(!(posts.getTitle().equals("") && posts.getContent().equals("") && posts.getReminder().equals("")))
+      posts.save();
+    }
     return ok("Post added successfully");
   }
     public Result addNotetaken(){

@@ -6,6 +6,8 @@
 GET     /                           @controllers.HomeController.index1
 #POST    /api                           @controllers.HomeController.apiCall
 GET     /note                       @controllers.HomeController.index
+GET     /login                       @controllers.HomeController.index
+#GET     /register                       @controllers.HomeController.index
 GET     /archive                       @controllers.HomeController.index
 GET     /trash                       @controllers.HomeController.index
 GET     /reminder                       @controllers.HomeController.index

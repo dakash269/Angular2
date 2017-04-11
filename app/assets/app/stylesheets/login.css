@@ -1,0 +1,9 @@
+@media screen and  (max-width: 980px)
+{
+ .form-control{font-size: 30px}
+  .userr{font-size: 40px}
+  .user{font-size: 30px}
+  .user1{visibility: hidden}
+  .form-control{height: 50px}
+}
+.user1{font-size: 30px}

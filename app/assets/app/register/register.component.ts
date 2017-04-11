@@ -6,6 +6,7 @@ import { AuthenticationService } from '../_services/index';
 @Component({
     selector: 'reg',
     templateUrl: 'assets/app/register/register.component.html',
+  styleUrls: ['assets/app/stylesheets/login.css'],
 })
 export class RegisterComponent {
   public data: any = {};
