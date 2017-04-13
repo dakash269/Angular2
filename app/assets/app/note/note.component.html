@@ -65,7 +65,7 @@
       <div  id="toolbarDiv" *ngIf="edited" class="toolbar" >
         <!--<div ng-show="showRest" id="toolbarDiv" class="toolbar" ng-cloak>-->
         <div class="col-sm-4 col-md-4">
-          <input [(ngModel)]="data.reminder"  class="timeInp datetimepicker4"  name="reminder" placeholder="Set Reminder"/>
+          <input [(ngModel)]="data.reminder"  class="timeInp datetimepicker4" ngui-datetime-picker    date-format="YYYY-MM-DD hh:mm:ss"    hour="23"    minute='59'    close-on-select="false" name="reminder" placeholder="Set Reminder"/>
           <!--<input type="datetime-local" [(ngModel)]="data.reminder" >-->
           <!--<input--><!--[(ngModel)]="data.reminder" ngui-datetime-picker  date-only="true" />-->
         </div>
@@ -81,15 +81,16 @@
     <!--<div class="padTopMore col-sm-12 col-md-12" ng-cloak>-->
     <div class="row rowWithFullWidth col-sm-12 col-md-12">
       <div id="items" class="no-padding col-sm-10 col-md-10 col-md-offset-1">
-        <div *ngFor="let post of posts">
+        <div *ngFor="let post of posts; let i=index " >
           <div class="col-sm-12 col-md-3 eachCard">
             <div class="card" >
               <!--<div class="card" ng-clock>-->
               <!--<input [(ngModel)]="id" name="id" [ngValue]="post.id" type="hidden">-->
               <div class="clickd">
-                <div name="title" [ngStyle]="myStyles" class="title wordWrap" contenteditable="false" >{{ post.title}}</div>
-                <div name="content"  id="Div" class="content wordWrap" contenteditable="false">{{ post.content}}</div>
-                <div name="reminder" class="remind1" contenteditable="false"><div class="remindText" >{{post.reminder}}</div></div>
+                <div name="title" (click)="selectItem(i)" [ngStyle]="myStyles" class="title wordWrap" contenteditable="false" >{{ post.title}}</div>
+                <div name="content" (click)="selectItem(i)" [ngClass]= "{'one': isOne, 'two': isTwo, 'three': isThree}" id="Div" class="content wordWrap" contenteditable="false">{{ post.content}}</div>
+                <div name="reminder" (click)="selectItem(i)" class="remind1" contenteditable="false">
+                  <div [ngStyle]="sty" [ngClass]="{'active1': selectedIdx == i}"id="remindText" >{{post.reminder}}</div></div>
                 <!--<div name="title" class="title wordWrap" contenteditable="false" ng-cloak>{{ post.title}}</div>-->
                 <!--<div name="content" class="content wordWrap" contenteditable="false" ng-cloak>{{ post.content}}</div>-->
                 <!--<div name="reminder" class="remind1" contenteditable="false"><div class="remindText" ng-cloak>{{post.reminder}}</div></div>-->

@@ -5,9 +5,11 @@ import {Location} from '@angular/common';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import {NoteComponent} from '../note/note.component';
 @Injectable()
 export class AuthenticationService {
-    constructor(private http: Http, private location: Location, private router: Router) {
+    constructor(private http: Http, private location: Location, private router: Router,
+    ) {
     }
     public register(userName: string, userEmail: string, userPassword: string) {
       return this.http.post('/api/authenticate', { userName: userName, userEmail: userEmail, userPassword: userPassword });
