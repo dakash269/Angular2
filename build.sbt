@@ -7,6 +7,14 @@ incOptions := incOptions.value.withNameHashing(true)
 updateOptions := updateOptions.value.withCachedResolution(cachedResoluton = true)
 JsEngineKeys.engineType := JsEngineKeys.EngineType.Node
 
+//includeFilter in (Assets, LessKeys.less) := "foo.less" | "bar.less"
+//
+//LessKeys.compress in Assets := true
+//
+//includeFilter in (Assets, LessKeys.less) := "*.less"
+//
+//excludeFilter in (Assets, LessKeys.less) := "_*.less"
+
 resolvers += Resolver.jcenterRepo
 
 libraryDependencies ++= Seq( jdbc , cache , ws   , specs2 % Test )
@@ -67,3 +75,13 @@ resolveFromWebjarsNodeModulesDir := true
 
 logLevel in tslint := Level.Debug
 routesGenerator := InjectedRoutesGenerator
+
+//libraryDependencies ++= Seq(
+//  "org.webjars" % "less-node" % "2.5.0",
+//  "org.webjars" % "source-map" % "0.1.40-1",
+//  "org.webjars" % "mkdirp" % "0.5.0",
+//  "org.webjars" % "clean-css" % "2.2.7",
+//  "org.webjars" % "es6-promise-node" % "2.1.1"
+//)
+
+//addSbtJsEngine("1.1.2")

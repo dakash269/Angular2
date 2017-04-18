@@ -19,3 +19,5 @@ addSbtPlugin("net.virtual-void" % "sbt-dependency-graph" % "0.8.2")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-play-ebean" % "3.0.0")
 
+//addSbtPlugin("com.typesafe.sbt" % "sbt-less" % "1.0.6")
+

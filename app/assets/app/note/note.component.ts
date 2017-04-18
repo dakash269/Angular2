@@ -8,7 +8,7 @@ import { NguiDatetimePickerModule } from '@ngui/datetime-picker';
 @Component({
   selector: 'note',
   templateUrl: 'assets/app/note/note.component.html',
-  styleUrls: ['assets/app/stylesheets/note.css', 'assets/app/stylesheets/start.css', 'assets/app/stylesheets/note2.css',
+  styleUrls: ['assets/app/stylesheets/note.css', 'assets/app/stylesheets/main.less', 'assets/app/stylesheets/start.css', 'assets/app/stylesheets/note2.css',
     'assets/app/stylesheets/simple-sidebar.css', 'assets/app/stylesheets/bootstrap-datetimepicker.min.css',
     'assets/app/bootstrap/css/bootstrap.min.css', 'assets/app/font-awesome/css/font-awesome.min.css',
     'assets/app/bootstrap/css/bootstrap-theme.min.css'],
