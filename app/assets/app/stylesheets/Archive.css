@@ -1,4 +1,14 @@
-body{background-color:#e8e8e8;}
+body {
+  background-color: #e8e8e8;
+  overflow-y: scroll;
+  width: 100%;
+}
+.navbar-custom {
+  background-color: blue;
+}
+.glyphicon {
+  font-size: 15px;
+}
 .userName1 {
   margin-right: 100px;
   margin-top: -35px;
@@ -6,102 +16,29 @@ body{background-color:#e8e8e8;}
   color: white;
   opacity: .8;
 }
+ul {
+  list-style-type: none;
+  margin-left: -0.05cm;
+}
+hr {
+  margin-left: -1cm;
+  opacity: 0.07;
+}
 .vr {
-    width:1px;
-    background-color:#000;
-    opacity:0.2;
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:250px;
-    visibility: hidden;
+  width: 1px;
+  background-color: #000;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 250px;
+  visibility: hidden;
 }
-@media screen and  (max-width: 950px) {
-    .vr {  bottom: 520px;  }
+.padTopMore {
+  margin-top: -2cm;
 }
-.navbar-custom{background-color:blue}
-#bottom{position:fixed}
-.padTopMore  {margin-top:-2cm;}
-.signout{  color:black!important;margin-right:30px;margin-top:-63px  }
-body{ overflow-y: scroll; width: 100%;}
-/*.glyphicon:hover {background-color: rgba(0, 0, 0, 0.05);border:1px hidden grey;padding:5px;}*/
-#Archive{top:0;margin-left:100px;opacity:1;color:white;position:absolute}
-#trash{text-decoration:none;color:black;}
-#notes{text-decoration:none;color:black;}
-#reminder{text-decoration:none;color:black;}
-.container       {display: inline-block;cursor: pointer;}
-.bar1,.bar2,.bar3{width: 20px;height: 2.5px;background-color: #333;margin: 2.5px 0;transition:0.4s;margin-left:0.5cm;opacity:0.9;}
-.bar1            {margin-top:-1.4cm;}
-#search          {margin-left:5.8cm;margin-top:-1.8cm;line-height: 35px;width:40cm;}
-.glyphicon       {font-size: 15px;}
-ul               {list-style-type: none;margin-left:-0.05cm;}
-.gly             {margin-top:-1.5cm;cursor: pointer;position:absolute;}
-.glyphicon.glyphicon-bell {font-size: 25px;margin-top:0.3cm;margin-left:4.2cm;position:absolute;cursor: pointer;opacity:0.9}
-#top {background-color:rgb(99, 99, 99);position: fixed; height: 10%;top:0;left:0;right:0;}
-
-hr{margin-left:-1cm;opacity:0.07}
-
-
-.img{   background-size: 120px 120px;height: 120px;margin: 20px;margin-top: 80px; margin-right: 20px; margin-bottom: 20px;margin-left: 720px;width: 120px;background-image:url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB5PSIwcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIGhlaWdodD0iMzQwcHgiIHdpZHRoPSIzNDBweCIgdmVyc2lvbj0iMS4xIiB4PSIwcHgiIHZpZXdCb3g9IjAgMCAzNDAgMzQwIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzNDAgMzQwIj4KICA8cGF0aCBvcGFjaXR5PSIuMSIgZD0ibTMxNy4yNiA4MC43NjNsLTQ0Ljg0LTM1LjU2M2gtMjA0LjM4bC00NC44NyAzNy4yODQtMi42NyAzLjAxNnYyMDkuM2gyOTl2LTIwOS4zbC0yLjI0LTQuNzM3em0tMTQ2LjcyIDE2NC4xMmwtNjUuNjUtNzQuODhoMzIuNjEzdi0zMy44aDY2LjN2MzMuOGgzMy40ODFsLTY2Ljc0IDc0Ljg4em0tMTI5LjY2LTE1OC4wOGwzMC4zMi0yOS45aDE5NWwzMy43IDI5LjloLTI1OS4wMnoiIGZpbGw9IiMzMzMiLz4KPC9zdmc+Cg==);position:absoulte;}
-
-.imgtxt{color: rgba(51,51,51,0.4);cursor: default;font-size: 25px;margin-top: 20px; margin-right: 20px;margin-bottom: 20px;margin-left: 575px;font-family: 'Roboto Slab','Times New Roman',serif;}
-
-.scrollbar{margin-left: 210px;height: 600px;width: 65px;background: #e8e8e8;overflow-y: hidden; margin-top: -355px;}
-.force-overflow{min-height: 1000px;}
-.scrollbar:hover {overflow-y: scroll;}
-
-#style-1::-webkit-scrollbar-track
-{-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);border-radius: 10px;background-color: #F5F5F5;}
-#style-1::-webkit-scrollbar
-{width: 12px;background-color: #F5F5F5;}
-#style-1::-webkit-scrollbar-thumb
-{border-radius: 10px;-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);background-color: #555;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.d
-{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: table;
-    box-sizing: border-box;
-    transition: background-color.4s;
-    padding: 8px;
-    background-color: rgb(255, 187, 0);
-}
-.city {
-    float: left;
-    margin: 5px;
-    padding: 15px;
-    max-width: 300px;
-    height: 300px;
-    border: 1px solid black;
+@media screen and (max-width: 950px) {
+  .vr {
+    bottom: 520px;
+  }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
-import { tokenNotExpired } from 'angular2-jwt';
+// import { tokenNotExpired } from 'angular2-jwt';
 import {Location} from '@angular/common';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
