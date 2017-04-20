@@ -6,8 +6,7 @@ import { AuthenticationService } from '../_services/index';
 @Component({
   selector: 'trash',
   templateUrl: 'assets/app/trash/trash.component.html',
-  styleUrls: ['assets/app/stylesheets/Trash.css', 'assets/app/stylesheets/main1.css', 'assets/app/bootstrap/css/bootstrap.min.css',
-    'assets/app/bootstrap/css/bootstrap-theme.min.css'],
+  styleUrls: ['assets/app/stylesheets/main1.css' ],
 })
 export class TrashComponent implements AfterViewInit {
   public data: any = {};

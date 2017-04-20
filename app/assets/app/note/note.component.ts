@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 @Component({
   selector: 'note',
   templateUrl: 'assets/app/note/note.component.html',
-  styleUrls: [ 'assets/app/stylesheets/main.css', 'assets/app/bootstrap/css/bootstrap.min.css', 'assets/app/bootstrap/css/bootstrap-theme.min.css'],
+  styleUrls: [ 'assets/app/stylesheets/main.css' ],
 })
 export class NoteComponent implements AfterViewInit {
   public data: any = {};

@@ -34,7 +34,7 @@
           <div class="col-sm-3 col-md-3"><i class="fa fa-bell fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">&nbsp;&nbsp;&nbsp;Reminder</div>
         </a>
       </li>
-      <hr style="border: 0.5px solid #918f8f;margin-top: 5px;margin-bottom: 5px;" width="118%">
+      <hr style="border: 0.5px solid #918f8f;margin-top: 5px;margin-bottom: 5px;" width="180%">
       <li class="itemList">
         <a [routerLink]="['/archive']">
           <div class="col-sm-3 col-md-3"><i class="fa fa-archive fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">&nbsp;&nbsp;&nbsp;Archive</div>
@@ -45,7 +45,7 @@
           <div class="col-sm-3 col-md-3"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></div><div class="col-sm-6 col-sm-offset-1 col-md-9 col-md-offset-0">&nbsp;&nbsp;&nbsp;Trash</div>
         </a>
       </li>
-      <hr style="border: 0.5px solid #918f8f;margin-top: 5px;margin-bottom: 5px;" width="118%">
+      <hr style="border: 0.5px solid #918f8f;margin-top: 5px;margin-bottom: 5px;" width="180%">
     </ul>
   </div>
     <div class="vr" id="ver">&nbsp;</div>
@@ -53,7 +53,7 @@
   <div class="row rowWithFullWidth col-md-12">
     <div id="items" class="no-padding col-md-10 col-md-offset-2">
     <div *ngFor="let post of posts">
-    <div class="col-md-3 eachCard" >
+    <div class="col-sm-12 col-md-3 eachCard" >
     <div class="card" >
   <!--<input ng-model="id" name="id" ng-value="post.id" type="hidden">-->
     <div class="clickd">
@@ -62,9 +62,9 @@
   <div name="reminder" class="remind" contenteditable="false"><div class="remindText">{{post.reminder}}</div></div>
   </div>
   <div class="toolbar">
-    <div class="inner col-md-offset-2">
-    <div class="col-md-3"><a (click)="delA(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Delete Note" class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a></div>
-    <div class="col-md-3"><a (click)="unarchive(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Unarchive Note"  class="glyphicon glyphicon-inbox" aria-hidden="true"></i></a></div>
+    <div class="inner col-sm-offset-3 col-md-offset-2">
+    <div class="col-sm-3 col-md-3"><a (click)="delA(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Delete Note" class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a></div>
+    <div class="col-sm-3 col-md-3"><a (click)="unarchive(post.id)"><i data-toggle="tooltip" data-placement="bottom" title="Unarchive Note"  class="fa fa-inbox fa-lg" aria-hidden="true"></i></a></div>
     </div>
     </div>
     </div>

@@ -6,8 +6,7 @@ import { AuthenticationService } from '../_services/index';
 @Component({
   selector: 'archive',
   templateUrl: 'assets/app/archive/archive.component.html',
-  styleUrls: ['assets/app/stylesheets/Archive.css', 'assets/app/stylesheets/main1.css', 'assets/app/bootstrap/css/bootstrap.min.css',
-    'assets/app/bootstrap/css/bootstrap-theme.min.css'],
+  styleUrls: ['assets/app/stylesheets/main1.css' ],
 })
 export class ArchiveComponent implements AfterViewInit {
   public data: any = {};
