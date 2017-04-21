@@ -2,13 +2,14 @@ package controllers;
 
 import com.avaje.ebean.Ebean;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.google.inject.Inject;
 import models.Notetaken1;
 import models.Registration;
+import play.api.cache.CacheApi;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Security;
-//import views.html.login;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,8 +18,17 @@ import java.util.List;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+//import views.html.login;
 
 public class HomeController extends Controller {
+  private CacheApi cache;
+  @Inject
+  public HomeController(CacheApi cache) {
+    this.cache = cache;
+//    cache.set("item.key", frontPageNews);
+//    News news = cache.get("item.key");
+  }
+
  public Result index1() {
    if(session().get("email")==null || session().get("email").equals("")) {
      return ok(views.html.index1.render());
